@@ -26,7 +26,7 @@ module.exports = {
       },
     ],
     "array-bracket-spacing": ["warn", "never"],
-    "no-useless-escape": "off",
-    "import/first": "off",
+    "no-irregular-whitespace": "error",
+    "no-trailing-spaces": "error",
   },
 };
