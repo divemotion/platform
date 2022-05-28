@@ -10,5 +10,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "eslint-plugin-simple-import-sort": "^7.0.0"
   }
 }
