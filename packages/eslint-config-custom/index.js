@@ -3,7 +3,7 @@ module.exports = {
   plugins: ["simple-import-sort", "import"],
   rules: {
     "@next/next/no-html-link-for-pages": "off",
-    "react/jsx-key": "off",
+    "react/jsx-key": "error",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "import/first": "error",

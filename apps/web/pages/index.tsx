@@ -7,9 +7,6 @@ export default function Web() {
     <div>
       <h1>Web</h1>
       <a href="/hi">hi</a>
-      {[1, 2, 3, 4].map((item) => (
-        <div>{item}</div>
-      ))}
       <Button />
     </div>
   );
