@@ -1,7 +1,8 @@
+import tw from "twin.macro";
 import { Button, styled } from "ui";
 
 const Wrapper = styled.div`
-  background: bisque;
+  ${tw`bg-blue-400`}
 `;
 
 export default function Web() {
