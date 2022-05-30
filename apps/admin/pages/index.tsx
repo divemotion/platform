@@ -1,10 +1,14 @@
-import { Button } from "ui";
+import tw from "twin.macro";
+import { Button, styled } from "ui";
 
+const Wrapper = styled.div`
+  ${tw`bg-dmOrange`}
+`;
 export default function Web() {
   return (
-    <div>
-      <h1>Admin</h1>
-      <Button />
-    </div>
+    <Wrapper>
+      <h1 className="text-center font-mono text-3xl font-bold pt-10">Web</h1>
+      <Button>Button</Button>
+    </Wrapper>
   );
 }
