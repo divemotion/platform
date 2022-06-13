@@ -16,7 +16,7 @@ services:
       - "5001:5001"
     depends_on:
       - "postgres2"
-    restart: "no"
+    restart: always
     environment:
       ## postgres database to store Hasura metadata
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres2:5431/postgres
