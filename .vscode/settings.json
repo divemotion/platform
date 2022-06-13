@@ -1,10 +1,6 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": [
-    "camelcase",
-    "hasura",
-    "tailwindcss"
-  ],
+  "cSpell.words": ["camelcase", "esbuild", "hasura", "tailwindcss"],
   "scss.validate": false,
   "editor.quickSuggestions": {
     "strings": true

@@ -1,0 +1,11 @@
+{
+  "name": "hasura",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
