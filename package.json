@@ -21,7 +21,8 @@
     "jest": "^28.1.1",
     "prettier": "latest",
     "ts-jest": "^28.0.4",
-    "turbo": "latest"
+    "turbo": "latest",
+    "wait-on": "^6.0.1"
   },
   "engines": {
     "npm": ">=7.0.0",
