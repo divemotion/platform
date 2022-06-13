@@ -1,0 +1,24 @@
+schema:
+  - http://localhost:8080/v1/graphql:
+      headers:
+        x-hasura-custom: value
+documents: 
+  - apps/admin/graphql/**/*.graphql
+  - apps/web/graphql/**/*.graphql
+  - apps/operation/graphql/**/*.graphql
+overwrite: true
+generates:
+  apps/hasura/graphql/__generated__/index.ts:
+    schema:
+    - http://localhost:8080/v1/graphql:
+        headers:
+          x-hasura-custom: value
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      namingConvention:
+        typeNames: pascal-case#pascalCase
+        transformUnderscore: true
+      maybeValue: T | undefined | null
