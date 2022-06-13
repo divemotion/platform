@@ -3,9 +3,9 @@ schema:
       headers:
         x-hasura-custom: value
 documents: 
-  - apps/admin/graphql/**/*.graphql
-  - apps/web/graphql/**/*.graphql
-  - apps/operation/graphql/**/*.graphql
+  - apps/admin/graphql/*.graphql
+  - apps/web/graphql/*.graphql
+  - apps/operation/graphql/*.graphql
 overwrite: true
 generates:
   apps/hasura/graphql/__generated__/index.ts:

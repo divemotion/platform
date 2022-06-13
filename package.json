@@ -10,7 +10,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint --parallel --no-cache",
-    "format": "prettier --write \"**/*.{ts,tsx,md,js}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md,js}\"",
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "devDependencies": {
     "prettier": "latest",
@@ -20,5 +21,12 @@
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "packageManager": "yarn@1.22.17"
+  "packageManager": "yarn@1.22.17",
+  "dependencies": {
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/typescript": "^2.5.1",
+    "@graphql-codegen/typescript-operations": "^2.4.2",
+    "@graphql-codegen/typescript-react-apollo": "^3.2.16",
+    "graphql": "^16.5.0"
+  }
 }
