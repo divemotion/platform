@@ -1,4 +1,4 @@
-query UsersAdmin {
+query UsersList {
   users {
     id
     first_name

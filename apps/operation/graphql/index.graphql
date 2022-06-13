@@ -1,4 +1,4 @@
-query UsersOperation {
+query UsersList {
   users {
     id
     first_name
