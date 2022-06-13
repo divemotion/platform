@@ -1,39 +1,3 @@
 table:
   schema: public
   name: users
-object_relationships:
-  - name: profile
-    using:
-      foreign_key_constraint_on:
-        column: user_id
-        table:
-          schema: public
-          name: profiles
-insert_permissions:
-  - role: user
-    permission:
-      check: {}
-      columns:
-        - id
-        - email
-      backend_only: false
-select_permissions:
-  - role: user
-    permission:
-      columns:
-        - email
-        - id
-      filter: {}
-      limit: 100
-update_permissions:
-  - role: user
-    permission:
-      columns:
-        - email
-        - id
-      filter: {}
-      check: {}
-delete_permissions:
-  - role: user
-    permission:
-      filter: {}
