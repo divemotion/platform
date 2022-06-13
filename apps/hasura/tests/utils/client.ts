@@ -1,10 +1,20 @@
 import { GraphQLClient } from "graphql-request";
 
-import { getSdk } from "../../graphql/__generated__";
+import { getSdk as adminSdk } from "../../graphql/admin/__generated__";
+import { getSdk as operationSdk } from "../../graphql/operation/__generated__";
+import { getSdk as webSdk } from "../../graphql/web/__generated__";
 
-const Client = (): ReturnType<typeof getSdk> => {
+export const AdminClient = (): ReturnType<typeof adminSdk> => {
   const client = new GraphQLClient("http://localhost:5001/v1/graphql");
-  return getSdk(client);
+  return adminSdk(client);
 };
 
-export default Client;
+export const WebClient = (): ReturnType<typeof webSdk> => {
+  const client = new GraphQLClient("http://localhost:5001/v1/graphql");
+  return webSdk(client);
+};
+
+export const OperationClient = (): ReturnType<typeof operationSdk> => {
+  const client = new GraphQLClient("http://localhost:5001/v1/graphql");
+  return adminSdk(client);
+};

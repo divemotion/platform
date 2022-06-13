@@ -1,0 +1,21 @@
+query UsersList {
+  users {
+    id
+    first_name
+    last_name
+    email
+    updated_at
+    created_at
+  }
+}
+
+mutation AddUser($user: users_insert_input!) {
+  insert_users_one(object: $user) {
+    id
+    first_name
+    last_name
+    email
+    updated_at
+    created_at
+  }
+}
