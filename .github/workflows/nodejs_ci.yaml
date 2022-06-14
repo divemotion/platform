@@ -58,6 +58,9 @@ jobs:
       - run: sudo chown -R $USER:$USER ${{ github.workspace }}
       - name: install hasura cli
         run: curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | VERSION=${{ env.HASURA_VERSION }} bash
+      - name: Hasura init
+        run: hasura init . --skip-update-check --endpoint http://localhost:5001 --version 3
+        working-directory: ./apps/hasura
       - name: Hasura migrate
         run: hasura --project ./apps/hasura migrate apply --endpoint http://localhost:5001 --skip-update-check --all-databases --log-level DEBUG
       - name: Hasura metadata
