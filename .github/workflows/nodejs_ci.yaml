@@ -62,3 +62,5 @@ jobs:
         run: hasura --project ./apps/hasura migrate apply --endpoint http://localhost:5001 --skip-update-check --all-databases --log-level DEBUG
       - name: Hasura metadata
         run: hasura --project ./apps/hasura metadata apply --endpoint http://localhost:5001 --skip-update-check --log-level DEBUG
+      - name: Hasura Test
+        run: yarn workspace hasura test
