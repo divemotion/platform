@@ -7,7 +7,7 @@ on:
 
 env:
   NODE_VERSION_X: "14.x"
-  HASURA_VERSION: "v2.2.1"
+  HASURA_VERSION: "v2.7.0"
 
 jobs:
   setup:
@@ -20,9 +20,9 @@ jobs:
         image: postgres:12
         # Provide the password for postgres
         env:
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: postgrespassword
         ports:
-          - 5432:5432
+          - 5431:5431
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -32,27 +32,23 @@ jobs:
       graphql-engine:
         image: hasura/graphql-engine:v2.7.0
         ports:
-          - 8080:8080
+          - 5001:5001
         env:
-          DEFAULT_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
-          HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
+          DEFAULT_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5431/postgres
+          HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5431/postgres
           HASURA_GRAPHQL_ENABLE_CONSOLE: "false" # set to "false" to disable console
           HASURA_GRAPHQL_ADMIN_SECRET: "hasura-secret"
-          HASURA_GRAPHQL_NO_OF_RETRIES: 100
           HASURA_ACTION_BASE_URL: "http://localhost:8888"
-          DEFAULT_DATABASE_PG_CONNECTIONS: 10
-          JWT_SECRET_KEY: "JWT_SECRET_KEY"
-          HASURA_LONG_LIVED_TOKEN: "HASURA_LONG_LIVED_TOKEN"
           HASURA_ADMIN_SECRET: "hasura-secret"
-          GRAPHQL_URL: "http://localhost:8080/v1/graphql"
+          GRAPHQL_URL: "http://localhost:5001/v1/graphql"
     steps:
       - name: Hasura Health Check
-        run: sleep 10 && curl -f http://localhost:8080/healthz
+        run: sleep 10 && curl -f http://localhost:5001/healthz
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION_X }}
       - name: Get node version
@@ -60,3 +56,10 @@ jobs:
           echo "NODE_VERSION=$(node --version)" >> $GITHUB_ENV
       - name: Install dependencies
         run: yarn install --no-progress --non-interactive --prefer-offline
+      - name: Lint
+        run: yarn lint
+      - name: Build
+        run: yarn build
+      - run: sudo chown -R $USER:$USER ${{ github.workspace }}
+      - name: install hasura cli
+        run: curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | VERSION=${{ env.HASURA_VERSION }} bash
