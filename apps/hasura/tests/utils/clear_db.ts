@@ -6,7 +6,7 @@ const client = new Client({
   host: "localhost",
   database: "postgres",
   password: "postgrespassword",
-  port: 5431,
+  port: 5432,
 });
 const getClient = async (): Promise<Client> => {
   if (!connected) {
