@@ -37,9 +37,7 @@ jobs:
           DEFAULT_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
           HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
           HASURA_GRAPHQL_ENABLE_CONSOLE: "false" # set to "false" to disable console
-          HASURA_GRAPHQL_ADMIN_SECRET: "hasura-secret"
           HASURA_ACTION_BASE_URL: "http://localhost:8888"
-          HASURA_ADMIN_SECRET: "hasura-secret"
           GRAPHQL_URL: "http://localhost:8080/v1/graphql"
     steps:
       - name: Hasura Health Check
