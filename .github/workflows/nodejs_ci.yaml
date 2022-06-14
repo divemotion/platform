@@ -22,7 +22,7 @@ jobs:
         env:
           POSTGRES_PASSWORD: postgrespassword
         ports:
-          - 5431:5432
+          - 5432:5432
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -34,10 +34,10 @@ jobs:
         ports:
           - 5001:5001
         env:
-          HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5431/postgres
-          DEFAULT_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5431/postgres
-          HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5431/postgres
-          PG_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5431/postgres
+          HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
+          DEFAULT_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
+          HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
+          PG_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
           HASURA_GRAPHQL_ENABLE_CONSOLE: "false" # set to "false" to disable console
           HASURA_ACTION_BASE_URL: "http://localhost:8888"
           GRAPHQL_URL: "http://localhost:5001/v1/graphql"
@@ -76,3 +76,5 @@ jobs:
           GRAPHQL_SCHEMA_URL: "http://localhost:5001/v1/graphql"
       - name: Hasura Test
         run: yarn workspace hasura test
+        env:
+          POSTGRES_CONNECTION: postgres://postgres:postgrespassword@postgres:5432/postgres
