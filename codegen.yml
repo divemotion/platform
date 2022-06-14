@@ -1,7 +1,7 @@
 schema:
   - ${GRAPHQL_SCHEMA_URL}:
       headers:
-        x-hasura-custom: value
+        x-hasura-admin-secret: ${HASURA_ADMIN_SECRET}
 documents:
   - apps/admin/graphql/*.graphql
   - apps/web/graphql/*.graphql
@@ -11,10 +11,6 @@ generates:
   apps/hasura/graphql/admin/__generated__/index.ts:
     documents:
       - apps/admin/graphql/*.graphql
-    schema:
-      - ${GRAPHQL_SCHEMA_URL}:
-          headers:
-            x-hasura-custom: value
     overwrite: true
     plugins:
       - typescript
@@ -28,10 +24,6 @@ generates:
   apps/hasura/graphql/web/__generated__/index.ts:
     documents:
       - apps/web/graphql/*.graphql
-    schema:
-      - ${GRAPHQL_SCHEMA_URL}:
-          headers:
-            x-hasura-custom: value
     overwrite: true
     plugins:
       - typescript
@@ -45,10 +37,6 @@ generates:
   apps/hasura/graphql/operation/__generated__/index.ts:
     documents:
       - apps/operation/graphql/*.graphql
-    schema:
-      - ${GRAPHQL_SCHEMA_URL}:
-          headers:
-            x-hasura-custom: value
     overwrite: true
     plugins:
       - typescript
