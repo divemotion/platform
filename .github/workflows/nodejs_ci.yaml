@@ -37,6 +37,7 @@ jobs:
           HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
           DEFAULT_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
           HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
+          PG_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
           HASURA_GRAPHQL_ENABLE_CONSOLE: "false" # set to "false" to disable console
           HASURA_ACTION_BASE_URL: "http://localhost:8888"
           GRAPHQL_URL: "http://localhost:5001/v1/graphql"
