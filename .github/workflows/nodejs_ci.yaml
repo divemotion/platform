@@ -61,5 +61,5 @@ jobs:
       - name: Build
         run: yarn build
       - run: sudo chown -R $USER:$USER ${{ github.workspace }}
-      - name: install hasura cli
-        run: curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | VERSION=${{ env.HASURA_VERSION }} bash
+      - name: setup test db
+        run: yarn workspace hasura setup-test-db
