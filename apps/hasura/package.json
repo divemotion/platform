@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "docker-up": "docker-compose -f docker-compose.yaml up -d",
     "docker-test-up": "docker-compose -f docker-compose-testing.yaml up -d",
-    "wait": "echo 'hasura:wait' && wait-on http-get://localhost:5001/healthz",
+    "wait-testing-engine": "echo 'hasura:wait' && wait-on http-get://localhost:5001/healthz",
+    "wait-dev-engine": "echo 'hasura:wait' && wait-on http-get://localhost:8080/healthz",
     "apply-migration-test": "hasura migrate apply  --endpoint http://localhost:5001 --database-name default --skip-update-check",
     "apply-metadata-test": "hasura metadata apply  --endpoint http://localhost:5001 --skip-update-check",
-    "setup-test-db": "yarn docker-test-up && yarn wait && yarn apply-migration-test && yarn apply-metadata-test",
+    "apply-migration-dev": "hasura migrate apply  --endpoint http://localhost:8080 --database-name default --skip-update-check",
+    "apply-metadata-dev": "hasura metadata apply  --endpoint http://localhost:8080 --skip-update-check",
+    "setup-test-db": "yarn docker-test-up && yarn wait-testing-engine && yarn apply-migration-test && yarn apply-metadata-test",
+    "setup-db": "yarn docker-up && yarn wait-dev-engine && yarn apply-migration-dev && yarn apply-metadata-dev",
     "test": "jest --coverage --runInBand"
   },
   "keywords": [],
