@@ -11,9 +11,12 @@ describe("Users", () => {
    */
   describe("create user", () => {
     it("should have 1 user", async () => {
-      const adminClient = AdminClient();
+      const adminClient = AdminClient({
+        userId: "e2aae540-1486-4b53-b669-261a13bc12ae",
+      });
       const newUser = await adminClient.AddUser({
         user: {
+          id: "e2aae540-1486-4b53-b669-261a13bc12ae",
           first_name: "first",
           last_name: "last",
           email: "email@mail.com",
