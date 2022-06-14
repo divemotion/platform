@@ -65,6 +65,8 @@ jobs:
         run: hasura --project ./apps/hasura metadata apply --endpoint http://localhost:5001 --skip-update-check --log-level DEBUG
       - name: Hasura reload
         run: hasura --project ./apps/hasura metadata reload --endpoint http://localhost:5001 --skip-update-check --log-level DEBUG
+      - name: hasura metadata ic list
+        run: hasura metadata ic list --project ./apps/hasura --endpoint http://localhost:5001 --skip-update-check --log-level DEBUG
       - name: curl
         run: curl http://localhost:5001/healthz
       - name: Generate SDK
