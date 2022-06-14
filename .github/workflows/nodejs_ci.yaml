@@ -78,13 +78,6 @@ jobs:
         with:
           path: "**/graphql/**/__generated__"
           key: ${{ runner.os }}-build-${{ github.sha }}
-      - name: Cache build Web Build
-        uses: actions/cache@v3
-        with:
-          path: "**/.next"
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.[jt]sx?') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Install dependencies
         run: yarn install --no-progress --non-interactive --prefer-offline
       - name: Build
@@ -144,3 +137,44 @@ jobs:
         run: yarn install --no-progress --non-interactive --prefer-offline
       - name: Lint
         run: yarn lint
+  Build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: [setup]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION_X }}
+      - name: Get node version
+        run: |
+          echo "NODE_VERSION=$(node --version)" >> $GITHUB_ENV
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        id: node_modules-cache
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-test-node-${{ env.NODE_VERSION }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Cache build Web Build
+        uses: actions/cache@v3
+        with:
+          path: "**/.next"
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.[jt]sx?') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+      - name: Install dependencies
+        run: yarn install --no-progress --non-interactive --prefer-offline
+      - name: Lint
+        run: yarn build
