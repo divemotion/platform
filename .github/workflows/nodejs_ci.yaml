@@ -32,16 +32,16 @@ jobs:
       graphql-engine:
         image: hasura/graphql-engine:v2.7.0
         ports:
-          - 8080:8080
+          - 5001:5001
         env:
           DEFAULT_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
           HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
           HASURA_GRAPHQL_ENABLE_CONSOLE: "false" # set to "false" to disable console
           HASURA_ACTION_BASE_URL: "http://localhost:8888"
-          GRAPHQL_URL: "http://localhost:8080/v1/graphql"
+          GRAPHQL_URL: "http://localhost:5001/v1/graphql"
     steps:
       - name: Hasura Health Check
-        run: sleep 10 && curl -f http://localhost:8080/healthz
+        run: sleep 10 && curl -f http://localhost:5001/healthz
 
       - uses: actions/checkout@v3
         with:
@@ -54,10 +54,6 @@ jobs:
           echo "NODE_VERSION=$(node --version)" >> $GITHUB_ENV
       - name: Install dependencies
         run: yarn install --no-progress --non-interactive --prefer-offline
-      - name: Lint
-        run: yarn lint
-      - name: Build
-        run: yarn build
       - run: sudo chown -R $USER:$USER ${{ github.workspace }}
       - name: install hasura cli
         run: curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | VERSION=${{ env.HASURA_VERSION }} bash
