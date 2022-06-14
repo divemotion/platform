@@ -55,8 +55,8 @@ jobs:
       - name: Get node version
         run: |
           echo "NODE_VERSION=$(node --version)" >> $GITHUB_ENV
-      - name: Install dependencies
-        run: yarn install --no-progress --non-interactive --prefer-offline
+      # - name: Install dependencies
+      #   run: yarn install --no-progress --non-interactive --prefer-offline
       - run: sudo chown -R $USER:$USER ${{ github.workspace }}
       - name: install hasura cli
         run: curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | VERSION=${{ env.HASURA_VERSION }} bash
