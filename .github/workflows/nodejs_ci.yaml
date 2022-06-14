@@ -74,6 +74,7 @@ jobs:
           HASURA_ACTION_BASE_URL: "http://localhost:8888"
           GRAPHQL_URL: "http://localhost:5001/v1/graphql"
           HASURA_GRAPHQL_SERVER_PORT: 5001
+          HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
     steps:
       - name: Hasura Health Check
         run: sleep 10 && curl -f http://localhost:5001/healthz
@@ -133,6 +134,8 @@ jobs:
         run: yarn workspace hasura test
         env:
           POSTGRES_CONNECTION: postgres://postgres:postgrespassword@localhost:5432/postgres
+          GRAPHQL_SCHEMA_URL: "http://localhost:5001/v1/graphql"
+          HASURA_ADMIN_SECRET: myadminsecretkey
   lint:
     name: Lint Source
     runs-on: ubuntu-latest
