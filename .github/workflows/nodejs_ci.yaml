@@ -80,8 +80,6 @@ jobs:
           key: ${{ runner.os }}-build-${{ github.sha }}
       - name: Install dependencies
         run: yarn install --no-progress --non-interactive --prefer-offline
-      - name: Build
-        run: yarn build
       - run: sudo chown -R $USER:$USER ${{ github.workspace }}
       - name: install hasura cli
         run: curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | VERSION=${{ env.HASURA_VERSION }} bash
