@@ -2,7 +2,7 @@ table:
   schema: public
   name: users
 insert_permissions:
-  - role: user_admin
+  - role: admin_user
     permission:
       check: {}
       columns:
@@ -14,7 +14,7 @@ insert_permissions:
         - id
       backend_only: false
 select_permissions:
-  - role: user_admin
+  - role: admin_user
     permission:
       columns:
         - email
@@ -26,7 +26,7 @@ select_permissions:
       filter: {}
       limit: 100
 update_permissions:
-  - role: user_admin
+  - role: admin_user
     permission:
       columns:
         - email
@@ -38,6 +38,6 @@ update_permissions:
       filter: {}
       check: {}
 delete_permissions:
-  - role: user_admin
+  - role: admin_user
     permission:
       filter: {}
