@@ -77,4 +77,4 @@ jobs:
       - name: Hasura Test
         run: yarn workspace hasura test
         env:
-          POSTGRES_CONNECTION: postgres://postgres:postgrespassword@postgres:5432/postgres
+          POSTGRES_CONNECTION: postgres://postgres:postgrespassword@localhost:5432/postgres
