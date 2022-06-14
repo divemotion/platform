@@ -161,7 +161,7 @@ jobs:
       - name: build
         run: yarn build
   test:
-    name: Build
+    name: Test
     runs-on: ubuntu-latest
     needs: [setup]
     steps:
