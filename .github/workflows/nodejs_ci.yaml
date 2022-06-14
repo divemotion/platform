@@ -22,7 +22,7 @@ jobs:
         env:
           POSTGRES_PASSWORD: postgrespassword
         ports:
-          - 5431:5431
+          - 5432:5432
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -32,18 +32,18 @@ jobs:
       graphql-engine:
         image: hasura/graphql-engine:v2.7.0
         ports:
-          - 5001:5001
+          - 8080:8080
         env:
-          DEFAULT_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5431/postgres
-          HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5431/postgres
+          DEFAULT_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
+          HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
           HASURA_GRAPHQL_ENABLE_CONSOLE: "false" # set to "false" to disable console
           HASURA_GRAPHQL_ADMIN_SECRET: "hasura-secret"
           HASURA_ACTION_BASE_URL: "http://localhost:8888"
           HASURA_ADMIN_SECRET: "hasura-secret"
-          GRAPHQL_URL: "http://localhost:5001/v1/graphql"
+          GRAPHQL_URL: "http://localhost:8080/v1/graphql"
     steps:
       - name: Hasura Health Check
-        run: sleep 10 && curl -f http://localhost:5001/healthz
+        run: sleep 10 && curl -f http://localhost:8080/healthz
 
       - uses: actions/checkout@v3
         with:
