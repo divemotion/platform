@@ -1,5 +1,5 @@
 schema:
-  - http://localhost:5001/v1/graphql:
+  - ${GRAPHQL_SCHEMA_URL}:
       headers:
         x-hasura-custom: value
 documents:
@@ -12,7 +12,7 @@ generates:
     documents:
       - apps/admin/graphql/*.graphql
     schema:
-      - http://localhost:5001/v1/graphql:
+      - ${GRAPHQL_SCHEMA_URL}:
           headers:
             x-hasura-custom: value
     overwrite: true
@@ -29,7 +29,7 @@ generates:
     documents:
       - apps/web/graphql/*.graphql
     schema:
-      - http://localhost:5001/v1/graphql:
+      - ${GRAPHQL_SCHEMA_URL}:
           headers:
             x-hasura-custom: value
     overwrite: true
@@ -46,7 +46,7 @@ generates:
     documents:
       - apps/operation/graphql/*.graphql
     schema:
-      - http://localhost:5001/v1/graphql:
+      - ${GRAPHQL_SCHEMA_URL}:
           headers:
             x-hasura-custom: value
     overwrite: true
