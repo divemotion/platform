@@ -7,7 +7,9 @@ const Wrapper = styled.div`
 export default function Web() {
   return (
     <Wrapper>
-      <h1 className="text-center font-mono text-3xl font-bold pt-10">Web</h1>
+      <h1 className="text-center font-mono text-3xl font-bold pt-10">
+        Web test action
+      </h1>
       <Button>Button</Button>
     </Wrapper>
   );
