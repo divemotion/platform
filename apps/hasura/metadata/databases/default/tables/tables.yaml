@@ -1,1 +1,2 @@
+- "!include public_booking.yaml"
 - "!include public_users.yaml"
