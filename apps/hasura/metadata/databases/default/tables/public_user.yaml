@@ -1,0 +1,51 @@
+table:
+  schema: public
+  name: user
+array_relationships:
+  - name: bookings
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          schema: public
+          name: booking
+insert_permissions:
+  - role: admin_user
+    permission:
+      check: {}
+      columns:
+        - email
+        - first_name
+        - last_name
+        - created_at
+        - updated_at
+        - id
+      backend_only: false
+select_permissions:
+  - role: admin_user
+    permission:
+      columns:
+        - email
+        - first_name
+        - last_name
+        - created_at
+        - updated_at
+        - id
+      filter: {}
+      limit: 100
+update_permissions:
+  - role: admin_user
+    permission:
+      columns:
+        - email
+        - first_name
+        - last_name
+        - created_at
+        - updated_at
+        - id
+      filter: {}
+      check: {}
+delete_permissions:
+  - role: admin_user
+    permission:
+      filter: {}
