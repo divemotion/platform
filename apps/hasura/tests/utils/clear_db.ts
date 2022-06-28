@@ -21,7 +21,8 @@ export const closeConnection = async () => {
 
 const clearAllTables = async (): Promise<void> => {
   const client = await getClient();
-  await client.query("TRUNCATE users;");
+  await client.query("TRUNCATE booking CASCADE;");
+  await client.query("TRUNCATE users CASCADE;");
 };
 
 export default clearAllTables;
