@@ -1,3 +1,18 @@
 table:
   schema: public
   name: freebie
+array_relationships:
+  - name: trip_exclusions
+    using:
+      foreign_key_constraint_on:
+        column: freebie
+        table:
+          schema: public
+          name: trip_exclusion
+  - name: trip_inclusions
+    using:
+      foreign_key_constraint_on:
+        column: freebie
+        table:
+          schema: public
+          name: trip_inclusion

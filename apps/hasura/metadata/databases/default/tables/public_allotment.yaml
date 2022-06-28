@@ -1,3 +1,13 @@
 table:
   schema: public
   name: allotment
+object_relationships:
+  - name: cabinByCabin
+    using:
+      foreign_key_constraint_on: cabin
+  - name: genderAcceptanceByGenderAcceptance
+    using:
+      foreign_key_constraint_on: gender_acceptance
+  - name: tripByTrip
+    using:
+      foreign_key_constraint_on: trip

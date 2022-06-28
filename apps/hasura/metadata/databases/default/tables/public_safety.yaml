@@ -1,3 +1,11 @@
 table:
   schema: public
   name: safety
+array_relationships:
+  - name: boat_safeties
+    using:
+      foreign_key_constraint_on:
+        column: safety
+        table:
+          schema: public
+          name: boat_safety

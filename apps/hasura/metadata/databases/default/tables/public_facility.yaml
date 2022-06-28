@@ -1,3 +1,18 @@
 table:
   schema: public
   name: facility
+array_relationships:
+  - name: boat_facilities
+    using:
+      foreign_key_constraint_on:
+        column: facility
+        table:
+          schema: public
+          name: boat_facility
+  - name: cabin_facilities
+    using:
+      foreign_key_constraint_on:
+        column: facility
+        table:
+          schema: public
+          name: cabin_facility

@@ -1,3 +1,11 @@
 table:
   schema: public
   name: organizer
+array_relationships:
+  - name: trips
+    using:
+      foreign_key_constraint_on:
+        column: organizer
+        table:
+          schema: public
+          name: trip

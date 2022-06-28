@@ -1,3 +1,11 @@
 table:
   schema: public
   name: gender_acceptance
+array_relationships:
+  - name: allotments
+    using:
+      foreign_key_constraint_on:
+        column: gender_acceptance
+        table:
+          schema: public
+          name: allotment
