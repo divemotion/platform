@@ -9,7 +9,7 @@ query TripDetails {
     name_th
     name_en
   }
-  trip(where: {id: {_eq: "6cac639b-7119-434b-bf29-a92d0e022111"}}) {
+  trip(where: {id: {_eq: "981f374d-fc25-49b7-aba4-e43c5eff8b66"}}) {
     id
     name_th
     name_en
@@ -33,7 +33,7 @@ query TripDetails {
         }
       }
     }
-    allotments(order_by: {price: asc, cabin: asc}, where: {remaining_seat: {_gt: "0"}}, distinct_on: cabin) {
+    allotments(order_by: {price: asc}, where: {remaining_seat: {_gt: "0"}}, distinct_on: price) {
       price
       discount_price
       foreigner_price

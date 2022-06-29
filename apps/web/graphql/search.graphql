@@ -4,7 +4,7 @@
 */
 
 query Search {
-  trip(where: {start_date: {_gte: "2022-09-01", _lte: "2022-09-30"}}) {
+  trip(where: {start_date: {_gte: "2022-09-01", _lte: "2022-12-30"}}, order_by: {start_date: asc}) {
   // trip(where: {start_date: {_gte: "2022-09-01", _lte: "2022-09-30"}, trip_locations: {location: {_eq: "4ae733b9-fd31-4537-b912-a9b0eb313188"}}}) {
   // trip(where: {trip_locations: {location: {_eq: "b5689f30-0d5c-4451-b10a-c857738a3c8c"}}}) {
     id
