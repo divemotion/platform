@@ -1,0 +1,12 @@
+/* Note: 
+1. In case of allotments = [], means no more slot for new diver(s)
+2. Users can query by month or location.
+*/
+
+query Location {
+  location(order_by: {name_th: asc}) {
+    id
+    name_th
+    name_en
+  }
+}

@@ -1,0 +1,28 @@
+/* Note: 
+1. In case of allotments = [], means no more slot for new diver(s)
+2. Users can query by month or location.
+*/
+
+query Search {
+  trip(where: {start_date: {_gte: "2022-09-01", _lte: "2022-09-30"}}) {
+  // trip(where: {start_date: {_gte: "2022-09-01", _lte: "2022-09-30"}, trip_locations: {location: {_eq: "4ae733b9-fd31-4537-b912-a9b0eb313188"}}}) {
+  // trip(where: {trip_locations: {location: {_eq: "b5689f30-0d5c-4451-b10a-c857738a3c8c"}}}) {
+    id
+    name_th
+    name_en
+    start_date
+    end_date
+    number_of_dives
+    main_image_file_name
+    allotments(order_by: {price: asc}, limit: 1, where: {remaining_seat: {_gt: "0"}}) {
+      price
+      discount_price
+      foreigner_price
+      foreigner_discount_price
+    }
+    boatByBoat {
+      name_th
+      name_en
+    }
+  }
+}
