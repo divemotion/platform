@@ -1,0 +1,11 @@
+table:
+  schema: public
+  name: booking_status
+array_relationships:
+  - name: bookings
+    using:
+      foreign_key_constraint_on:
+        column: booking_status
+        table:
+          schema: public
+          name: booking

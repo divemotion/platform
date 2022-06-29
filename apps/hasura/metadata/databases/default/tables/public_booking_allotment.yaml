@@ -1,0 +1,13 @@
+table:
+  schema: public
+  name: booking_allotment
+object_relationships:
+  - name: allotmentByAllotment
+    using:
+      foreign_key_constraint_on: allotment
+  - name: bookingByBooking
+    using:
+      foreign_key_constraint_on: booking
+  - name: licenseIssuerByLicenseIssuer
+    using:
+      foreign_key_constraint_on: license_issuer
