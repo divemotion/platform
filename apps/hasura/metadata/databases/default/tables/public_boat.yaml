@@ -23,3 +23,10 @@ array_relationships:
         table:
           schema: public
           name: cabin
+  - name: trips
+    using:
+      foreign_key_constraint_on:
+        column: boat
+        table:
+          schema: public
+          name: trip

@@ -16,4 +16,5 @@
 - "!include public_trip.yaml"
 - "!include public_trip_exclusion.yaml"
 - "!include public_trip_inclusion.yaml"
+- "!include public_trip_location.yaml"
 - "!include public_user.yaml"

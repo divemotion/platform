@@ -2,6 +2,9 @@ table:
   schema: public
   name: trip
 object_relationships:
+  - name: boatByBoat
+    using:
+      foreign_key_constraint_on: boat
   - name: organizerByOrganizer
     using:
       foreign_key_constraint_on: organizer
@@ -27,3 +30,10 @@ array_relationships:
         table:
           schema: public
           name: trip_inclusion
+  - name: trip_locations
+    using:
+      foreign_key_constraint_on:
+        column: trip
+        table:
+          schema: public
+          name: trip_location
