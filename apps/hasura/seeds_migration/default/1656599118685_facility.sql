@@ -1,0 +1,15 @@
+SET check_function_bodies = false;
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('BOARD_GAME', '2022-06-28 16:57:44.451505+00', '2022-06-28 16:57:44.451505+00', 'บอร์ดเกม', 'Board Game', '棋盘游戏', false);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('WATER_HEATER', '2022-06-28 16:58:04.519015+00', '2022-06-28 16:58:04.519015+00', 'เครื่องทำน้ำอุ่น', 'Water Heater', '热水器', false);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('DECK', '2022-06-28 16:58:28.609607+00', '2022-06-28 16:58:28.609607+00', 'ดาดฟ้า', 'Deck', '甲板', false);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('P_BATH', '2022-06-28 16:58:54.007165+00', '2022-06-28 16:58:54.007165+00', 'ห้องน้ำส่วนตัว', 'Private Bathroom', '私人浴室', true);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('SALOON', '2022-06-28 16:59:15.877144+00', '2022-06-28 16:59:15.877144+00', 'ห้องโถง', 'Saloon', '轿车', false);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('NINTENDO', '2022-06-28 16:59:34.279856+00', '2022-06-28 16:59:34.279856+00', 'เกมนินเทนโด', 'Nintendo', '任天堂', false);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('NITROX', '2022-06-28 16:59:52.28714+00', '2022-06-28 16:59:52.28714+00', 'ไนตรอก', 'Nitrox', '高氧', true);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('TOWEL', '2022-06-28 17:00:12.653578+00', '2022-06-28 17:00:12.653578+00', 'ผ้าเช็ดตัว', 'Towel', '毛巾', false);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('TV', '2022-06-28 17:00:35.045803+00', '2022-06-28 17:00:35.045803+00', 'ทีวี', 'Television', '电视', false);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('COFFEE_M', '2022-06-28 17:00:53.29189+00', '2022-06-28 17:00:53.29189+00', 'เครื่องทำกาแฟ', 'Coffee Machine', '咖啡机', false);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('FRIDGE', '2022-06-28 17:01:09.68007+00', '2022-06-28 17:01:09.68007+00', 'ตู้เย็น', 'Fridge', '冰箱', false);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('SAFE', '2022-06-28 17:01:28.328564+00', '2022-06-28 17:01:28.328564+00', 'ตู้เซฟ', 'Safe', '安全的', false);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('HAIR_DRYER', '2022-06-28 17:01:46.267718+00', '2022-06-28 17:01:46.267718+00', 'ไดร์เป่าผม', 'Hair Dryer', '电吹风', false);
+INSERT INTO public.facility (id, created_at, updated_at, name_th, name_en, name_zh, is_promoted) VALUES ('WIFI', '2022-06-28 16:57:17.788669+00', '2022-06-28 17:01:56.579033+00', 'อินเตอร์เน็ตไวไฟ', 'Wifi Internet', '无线上网', true);
