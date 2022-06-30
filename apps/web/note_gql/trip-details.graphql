@@ -1,0 +1,117 @@
+query TripDetails {
+  freebie(where: {is_promoted: {_eq: true}}) {
+    id
+    name_th
+    name_en
+  }
+  facility(where: {is_promoted: {_eq: true}}) {
+    id
+    name_th
+    name_en
+  }
+  trip(where: {id: {_eq: "981f374d-fc25-49b7-aba4-e43c5eff8b66"}}) {
+    id
+    name_th
+    name_en
+    start_date
+    end_date
+    number_of_dives
+    main_image_file_name
+    image_file_names
+    airport
+    description_th
+    description_en
+    equipment_rental_rate_th
+    equipment_rental_rate_en
+    notice_th
+    notice_en
+    trip_locations_aggregate {
+      nodes {
+        locationByLocation {
+          name_th
+          name_en
+        }
+      }
+    }
+    allotments(order_by: {price: asc}, where: {remaining_seat: {_gt: "0"}}, distinct_on: price) {
+      price
+      discount_price
+      foreigner_price
+      foreigner_discount_price
+      cabinByCabin {
+        id
+        main_image_file_name
+        name_th
+        name_en
+        cabin_width
+        cabin_length
+        max_guest_capacity
+        cabin_facilities_aggregate {
+          nodes {
+            facilityByFacility {
+              id
+              name_th
+              name_en
+            }
+          }
+        }
+      }
+    }
+    trip_exclusions_aggregate {
+      nodes {
+        freebieByFreebie {
+          id
+          name_th
+          name_en
+        }
+      }
+    }
+    trip_inclusions_aggregate {
+      nodes {
+        freebieByFreebie {
+          id
+          name_th
+          name_en
+        }
+      }
+    }
+    organizerByOrganizer {
+      id
+      logo_image_file_name
+      name_th
+      name_en
+    }
+    boatByBoat {
+      name_th
+      name_en
+      built_year
+      description_th
+      description_en
+      id
+      image_file_names
+      main_image_file_name
+      max_passenger_capacity
+      boat_facilities_aggregate {
+        nodes {
+          facilityByFacility {
+            id
+            name_th
+            name_en
+          }
+        }
+      }
+      boat_safeties_aggregate {
+        nodes {
+          safetyBySafety {
+            id
+            name_th
+            name_en
+            unit_th
+            unit_en
+          }
+          amount
+        }
+      }
+    }
+  }
+}

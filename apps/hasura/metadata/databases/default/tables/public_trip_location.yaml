@@ -1,0 +1,10 @@
+table:
+  schema: public
+  name: trip_location
+object_relationships:
+  - name: locationByLocation
+    using:
+      foreign_key_constraint_on: location
+  - name: tripByTrip
+    using:
+      foreign_key_constraint_on: trip

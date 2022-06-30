@@ -1,0 +1,10 @@
+table:
+  schema: public
+  name: cabin_facility
+object_relationships:
+  - name: cabinByCabin
+    using:
+      foreign_key_constraint_on: cabin
+  - name: facilityByFacility
+    using:
+      foreign_key_constraint_on: facility

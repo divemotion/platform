@@ -1,0 +1,11 @@
+table:
+  schema: public
+  name: license_issuer
+array_relationships:
+  - name: booking_allotments
+    using:
+      foreign_key_constraint_on:
+        column: license_issuer
+        table:
+          schema: public
+          name: booking_allotment

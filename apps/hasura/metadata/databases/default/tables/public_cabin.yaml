@@ -1,0 +1,22 @@
+table:
+  schema: public
+  name: cabin
+object_relationships:
+  - name: boatByBoat
+    using:
+      foreign_key_constraint_on: boat
+array_relationships:
+  - name: allotments
+    using:
+      foreign_key_constraint_on:
+        column: cabin
+        table:
+          schema: public
+          name: allotment
+  - name: cabin_facilities
+    using:
+      foreign_key_constraint_on:
+        column: cabin
+        table:
+          schema: public
+          name: cabin_facility

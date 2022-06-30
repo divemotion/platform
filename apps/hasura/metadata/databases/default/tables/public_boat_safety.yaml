@@ -1,0 +1,10 @@
+table:
+  schema: public
+  name: boat_safety
+object_relationships:
+  - name: boatByBoat
+    using:
+      foreign_key_constraint_on: boat
+  - name: safetyBySafety
+    using:
+      foreign_key_constraint_on: safety
