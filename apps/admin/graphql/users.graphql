@@ -1,5 +1,5 @@
 query UsersList {
-  users {
+  user {
     id
     first_name
     last_name
@@ -9,8 +9,8 @@ query UsersList {
   }
 }
 
-mutation AddUser($user: users_insert_input!) {
-  insert_users_one(object: $user) {
+mutation AddUser($user: user_insert_input!) {
+  insert_user_one(object: $user) {
     id
     first_name
     last_name
