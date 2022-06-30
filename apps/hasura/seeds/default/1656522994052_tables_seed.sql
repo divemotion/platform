@@ -1,4 +1,0 @@
-SET check_function_bodies = false;
-INSERT INTO public.boat_safety (id, created_at, updated_at, boat, safety, amount) VALUES ('56c7589f-67d9-4bcf-a8f3-6cf0a975f1af', '2022-06-28 17:35:38.415124+00', '2022-06-28 17:35:38.415124+00', 'fdd70fcd-8892-4dab-afde-5ada49159118', 'LIFE_JACKET', 50);
-INSERT INTO public.boat_safety (id, created_at, updated_at, boat, safety, amount) VALUES ('be3c6bf4-a61c-423e-945d-b9a134ed106f', '2022-06-28 17:35:56.957303+00', '2022-06-28 17:35:56.957303+00', '6d1965e5-cbe9-40b7-bd86-f00fdb50e839', 'LIFE_JACKET', NULL);
-INSERT INTO public.boat_safety (id, created_at, updated_at, boat, safety, amount) VALUES ('10025343-42fc-41cf-a5b4-b1662e4d6ab0', '2022-06-28 17:36:08.812148+00', '2022-06-28 17:36:08.812148+00', '919ca9ed-c4e6-4905-82c6-673ca30ede4b', 'LIFE_JACKET', NULL);

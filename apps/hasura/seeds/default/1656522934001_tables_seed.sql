@@ -1,4 +1,0 @@
-SET check_function_bodies = false;
-INSERT INTO public.allotment_status (id, description_th, description_en, description_zh, created_at, updated_at) VALUES ('LISTED', 'นำเสนอขาย', 'The allotment has been listed', '分配已列出', '2022-06-28 15:22:09.73105+00', '2022-06-28 17:02:42.298946+00');
-INSERT INTO public.allotment_status (id, description_th, description_en, description_zh, created_at, updated_at) VALUES ('DELISTED', 'นำออกจากการนำเสนอขาย', 'The allotment has been delisted', '配股已除牌', '2022-06-28 15:22:09.73105+00', '2022-06-28 17:02:58.479522+00');
-INSERT INTO public.allotment_status (id, description_th, description_en, description_zh, created_at, updated_at) VALUES ('SOLD_OUT', 'ขายหมดแล้ว', 'The allotment has been sold out', '配额已售罄', '2022-06-28 15:22:09.73105+00', '2022-06-28 17:03:09.19281+00');
