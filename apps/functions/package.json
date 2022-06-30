@@ -1,0 +1,22 @@
+{
+  "name": "admin",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 8888",
+    "build": "next build",
+    "start": "next start --port 8888",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^12.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.12",
+    "eslint": "7.32.0",
+    "eslint-config-custom": "*",
+    "postcss": "^8.4.14",
+    "tsconfig": "*",
+    "typescript": "^4.5.3"
+  }
+}
