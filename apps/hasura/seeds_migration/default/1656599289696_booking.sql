@@ -1,0 +1,2 @@
+SET check_function_bodies = false;
+INSERT INTO public.booking (id, created_at, updated_at, booking_status, booking_id, contact_name, contact_number, contact_email, notice, total_divers, total_price) VALUES ('b37a65aa-a522-4b84-a63e-c9a26da4efe0', '2022-06-29 16:10:10.175974+00', '2022-06-29 16:12:15.326276+00', 'WAITING_FOR_CONFIRM', '20220629', 'Rathakit Nop', '0889874693', 'rathakit.nop@gmail.com', NULL, 2, 52000);
