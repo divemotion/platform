@@ -21,3 +21,8 @@ Seed File Ordering
 - allotment
 - booking
 - booking_allotment
+
+# Example - Get an object from S3
+let s3 = new S3Service();
+const folder = formatOrganizerLogoImagePath(Config.aws.s3_bucket, org.id);
+const signedUrl = s3.signedUrl(folder, org.logo_image_file_name);

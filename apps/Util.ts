@@ -1,0 +1,1 @@
+export const formatOrganizerLogoImagePath = (bucket: string, organizerId: string) => `${bucket}/organizer/${organizerId}/resources/brand_logo`;
