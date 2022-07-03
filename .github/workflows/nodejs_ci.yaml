@@ -132,14 +132,10 @@ jobs:
         env:
           GRAPHQL_SCHEMA_URL: "http://localhost:5001/v1/graphql"
           HASURA_ADMIN_SECRET: myadminsecretkey
-      - name: run functions
-        run: yarn workspace functions build && yarn workspace functions start
-        env:
-          POSTGRES_CONNECTION: postgres://postgres:postgrespassword@localhost:5432/postgres
-          GRAPHQL_SCHEMA_URL: "http://localhost:5001/v1/graphql"
-          HASURA_ADMIN_SECRET: myadminsecretkey
+      - name: build functions
+        run: yarn workspace functions build
       - name: Hasura Test
-        run: yarn workspace hasura test
+        run: yarn workspace functions start & yarn workspace hasura test
         env:
           POSTGRES_CONNECTION: postgres://postgres:postgrespassword@localhost:5432/postgres
           GRAPHQL_SCHEMA_URL: "http://localhost:5001/v1/graphql"
