@@ -23,8 +23,8 @@ describe("Users", () => {
         },
       });
       const userList = await adminClient.UsersList();
-      expect(newUser.insert_users_one?.first_name).toEqual("first");
-      expect(userList.users.length).toEqual(1);
+      expect(newUser.insert_user_one?.first_name).toEqual("first");
+      expect(userList.user.length).toEqual(1);
     });
   });
 });
