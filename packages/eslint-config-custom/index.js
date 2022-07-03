@@ -28,6 +28,5 @@ module.exports = {
     "array-bracket-spacing": ["warn", "never"],
     "no-irregular-whitespace": "error",
     "no-trailing-spaces": "error",
-    camelcase: "error",
   },
 };

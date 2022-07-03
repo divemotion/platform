@@ -1,13 +1,24 @@
 import React from "react";
 import { MainLayout, TripCard } from "ui";
 
+import { useSearchQuery } from "../graphql/__generated__";
+
 const SearchPage = () => {
+  const { data, loading, error } = useSearchQuery({
+    variables: {
+      keyword: "%%",
+    },
+  });
+  console.log("data", data);
+  if (error) return <div>...error</div>;
   return (
     <MainLayout>
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((key) => (
-          <TripCard key={key} />
-        ))}
+        {loading && <div>...Loading</div>}
+        {!loading &&
+          data?.trip.map(({ id, name_th, description_th }) => (
+            <TripCard key={id} name={name_th} description={description_th} />
+          ))}
       </div>
     </MainLayout>
   );

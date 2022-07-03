@@ -6,6 +6,10 @@ module.exports = withImages(
   withFonts(
     withTM({
       reactStrictMode: true,
+      env: {
+        ADMIN_SECRET: process.env.ADMIN_SECRET,
+        GQL_URL: process.env.GQL_URL,
+      },
     })
   )
 );
