@@ -3,6 +3,7 @@ import clearDb, { closeConnection } from "./utils/clear_db";
 import { AdminClient } from "./utils/client";
 
 describe("Users", () => {
+  beforeEach(() => jest.setTimeout(60000));
   beforeEach(clearDb);
   afterAll(closeConnection);
   /**
@@ -23,6 +24,7 @@ describe("Users", () => {
         },
       });
       const userList = await adminClient.UsersList();
+      /* Checking that the first name of the user is equal to "first" */
       expect(newUser.insert_user_one?.first_name).toEqual("first");
       expect(userList.user.length).toEqual(1);
     });
