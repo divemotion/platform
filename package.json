@@ -12,7 +12,8 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint --parallel --no-cache",
     "format": "prettier --write \"**/*.{ts,tsx,md,js}\"",
-    "generate": "graphql-codegen --require dotenv/config --config codegen.yml"
+    "generate": "graphql-codegen --require dotenv/config --config codegen.yml",
+    "generate-test": "graphql-codegen --config test-codegen.yml"
   },
   "devDependencies": {
     "@types/jest": "^28.1.1",
