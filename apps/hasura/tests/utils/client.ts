@@ -47,3 +47,12 @@ export const OperationClient = (): ReturnType<typeof operationSdk> => {
   });
   return adminSdk(client);
 };
+
+export const Client = (): GraphQLClient => {
+  const client = new GraphQLClient(GQL_URL, {
+    headers: {
+      "x-hasura-admin-secret": ADMIN_SECRET,
+    },
+  });
+  return client;
+};
