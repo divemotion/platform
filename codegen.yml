@@ -2,48 +2,13 @@ schema:
   - ${GRAPHQL_SCHEMA_URL}:
       headers:
         x-hasura-admin-secret: ${HASURA_ADMIN_SECRET}
-documents:
-  - apps/admin/graphql/*.graphql
-  - apps/web/graphql/*.graphql
-  - apps/operation/graphql/*.graphql
 overwrite: true
 generates:
-  apps/hasura/graphql/admin/__generated__/index.ts:
-    documents:
-      - apps/admin/graphql/*.graphql
-    overwrite: true
-    plugins:
-      - typescript
-      - typescript-operations
-      - typescript-graphql-request
-    config:
-      namingConvention:
-        typeNames: pascal-case#pascalCase
-        transformUnderscore: true
-      maybeValue: T | undefined | null
-  apps/hasura/graphql/web/__generated__/index.ts:
+  apps/web/graphql/__generated__/index.ts:
     documents:
       - apps/web/graphql/*.graphql
     overwrite: true
     plugins:
       - typescript
       - typescript-operations
-      - typescript-graphql-request
-    config:
-      namingConvention:
-        typeNames: pascal-case#pascalCase
-        transformUnderscore: true
-      maybeValue: T | undefined | null
-  apps/hasura/graphql/operation/__generated__/index.ts:
-    documents:
-      - apps/operation/graphql/*.graphql
-    overwrite: true
-    plugins:
-      - typescript
-      - typescript-operations
-      - typescript-graphql-request
-    config:
-      namingConvention:
-        typeNames: pascal-case#pascalCase
-        transformUnderscore: true
-      maybeValue: T | undefined | null
+      - typescript-react-apollo

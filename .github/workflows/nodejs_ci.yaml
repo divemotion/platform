@@ -127,7 +127,7 @@ jobs:
       - name: curl
         run: curl http://localhost:5001/healthz
       - name: Generate SDK
-        run: yarn generate
+        run: yarn generate-test
         env:
           GRAPHQL_SCHEMA_URL: "http://localhost:5001/v1/graphql"
           HASURA_ADMIN_SECRET: myadminsecretkey
