@@ -1,7 +1,7 @@
-import Image from "next/image";
 import React from "react";
 
 import { BgImg } from "../BgImg";
+import { SvgIcon } from "../SvgIcon";
 
 export const TripCard = () => {
   return (
@@ -17,9 +17,18 @@ export const TripCard = () => {
           The M/Y Aqua liveaboard in the Galapagos offers the choice of..
         </p>
         <div className="mt-3 flex flex-col gap-1">
-          <p className="text-body7 text-gray-6">24 - 26 Jan 2021</p>
-          <p className="text-body7 text-gray-6">Aqua Liveaboard</p>
-          <p className="text-body7 text-gray-6">32,000 B</p>
+          <div className="flex gap-2 items-center">
+            <SvgIcon icon="calendar" />
+            <p className="text-body7 text-gray-6">24 - 26 Jan 2021</p>
+          </div>
+          <div className="flex gap-2 items-center">
+            <SvgIcon icon="waves" />
+            <p className="text-body7 text-gray-6">Aqua Liveaboard</p>
+          </div>
+          <div className="flex gap-2 items-center">
+            <SvgIcon icon="money" />
+            <p className="text-body7 text-gray-6">32,000 B</p>
+          </div>
         </div>
       </div>
     </div>
