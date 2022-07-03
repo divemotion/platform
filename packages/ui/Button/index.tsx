@@ -20,8 +20,6 @@ interface ButtonProps extends ButtonStyleProps {
   children?: JSX.Element | JSX.Element[] | string;
 }
 
-console.log("test", true && true && tw`bg-gray-9 hover:bg-gray-10`);
-
 const ButtonWrapper = styled.button<ButtonStyleProps>(
   ({ color, variant, border, size, disabled }) => [
     // default style

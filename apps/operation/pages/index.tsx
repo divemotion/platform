@@ -1,9 +1,7 @@
 import tw from "twin.macro";
 import { Button, styled } from "ui";
 
-const Wrapper = styled.div`
-  ${tw`bg-dmOrange`}
-`;
+const Wrapper = styled.div``;
 export default function Web() {
   return (
     <Wrapper>
