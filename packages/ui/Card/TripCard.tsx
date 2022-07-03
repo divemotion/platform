@@ -3,18 +3,21 @@ import React from "react";
 import { BgImg } from "../BgImg";
 import { SvgIcon } from "../SvgIcon";
 
-export const TripCard = () => {
+interface TripCardProps {
+  name: string;
+  description: string;
+}
+
+export const TripCard = ({ name, description }: TripCardProps) => {
   return (
     <div className="flex gap-3 rounded-lg border border-gray-4 overflow-hidden">
       <div className="w-[143px] bg-gray-5">
         <BgImg className="w-full h-full" src="https://picsum.photos/200/300" />
       </div>
       <div className="flex-1 py-2 pr-3">
-        <p className="text-body4 font-bold text-gray-9">
-          North Andaman - Koh Lipe (4-11D)
-        </p>
-        <p className="text-body7 text-gray-6 mt-2">
-          The M/Y Aqua liveaboard in the Galapagos offers the choice of..
+        <p className="text-body4 font-bold text-gray-9 line-clamp-2">{name}</p>
+        <p className="text-body7 text-gray-6 mt-2 text-ellipsis line-clamp-2">
+          {description}
         </p>
         <div className="mt-3 flex flex-col gap-1">
           <div className="flex gap-2 items-center">

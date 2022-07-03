@@ -1,0 +1,45 @@
+query Search($keyword: String) {
+  trip(
+    where: {
+      trip_locations: {
+        tripByTrip: {
+          _or: [
+            { name_th: { _ilike: $keyword } }
+            { name_en: { _ilike: $keyword } }
+            { name_zh: { _ilike: $keyword } }
+          ]
+        }
+      }
+    }
+  ) {
+    id
+    name_th
+    name_en
+    description_th
+    description_en
+    start_date
+    end_date
+    number_of_dives
+    main_image_file_name
+    trip_locations {
+      location
+      tripByTrip {
+        name_th
+      }
+    }
+    allotments(
+      order_by: { price: asc }
+      limit: 1
+      where: { remaining_seat: { _gt: "0" } }
+    ) {
+      price
+      discount_price
+      foreigner_price
+      foreigner_discount_price
+    }
+    boatByBoat {
+      name_th
+      name_en
+    }
+  }
+}

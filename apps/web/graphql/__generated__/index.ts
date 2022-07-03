@@ -9158,6 +9158,13 @@ export type UsersListQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type UsersListQuery = { __typename?: 'query_root', user: Array<{ __typename?: 'user', id: any, first_name: string, last_name: string, email: string, updated_at: any, created_at: any }> };
 
+export type SearchQueryVariables = Exact<{
+  keyword?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type SearchQuery = { __typename?: 'query_root', trip: Array<{ __typename?: 'trip', id: any, name_th: string, name_en?: string | null, description_th: string, description_en?: string | null, start_date: any, end_date: any, number_of_dives: any, main_image_file_name?: string | null, trip_locations: Array<{ __typename?: 'trip_location', location: any, tripByTrip: { __typename?: 'trip', name_th: string } }>, allotments: Array<{ __typename?: 'allotment', price: any, discount_price?: any | null, foreigner_price?: any | null, foreigner_discount_price?: any | null }>, boatByBoat: { __typename?: 'boat', name_th: string, name_en: string } }> };
+
 
 export const UsersListDocument = gql`
     query UsersList {
@@ -9198,3 +9205,68 @@ export function useUsersListLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<
 export type UsersListQueryHookResult = ReturnType<typeof useUsersListQuery>;
 export type UsersListLazyQueryHookResult = ReturnType<typeof useUsersListLazyQuery>;
 export type UsersListQueryResult = Apollo.QueryResult<UsersListQuery, UsersListQueryVariables>;
+export const SearchDocument = gql`
+    query Search($keyword: String) {
+  trip(
+    where: {trip_locations: {tripByTrip: {_or: [{name_th: {_ilike: $keyword}}, {name_en: {_ilike: $keyword}}, {name_zh: {_ilike: $keyword}}]}}}
+  ) {
+    id
+    name_th
+    name_en
+    description_th
+    description_en
+    start_date
+    end_date
+    number_of_dives
+    main_image_file_name
+    trip_locations {
+      location
+      tripByTrip {
+        name_th
+      }
+    }
+    allotments(
+      order_by: {price: asc}
+      limit: 1
+      where: {remaining_seat: {_gt: "0"}}
+    ) {
+      price
+      discount_price
+      foreigner_price
+      foreigner_discount_price
+    }
+    boatByBoat {
+      name_th
+      name_en
+    }
+  }
+}
+    `;
+
+/**
+ * __useSearchQuery__
+ *
+ * To run a query within a React component, call `useSearchQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSearchQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSearchQuery({
+ *   variables: {
+ *      keyword: // value for 'keyword'
+ *   },
+ * });
+ */
+export function useSearchQuery(baseOptions?: Apollo.QueryHookOptions<SearchQuery, SearchQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<SearchQuery, SearchQueryVariables>(SearchDocument, options);
+      }
+export function useSearchLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SearchQuery, SearchQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<SearchQuery, SearchQueryVariables>(SearchDocument, options);
+        }
+export type SearchQueryHookResult = ReturnType<typeof useSearchQuery>;
+export type SearchLazyQueryHookResult = ReturnType<typeof useSearchLazyQuery>;
+export type SearchQueryResult = Apollo.QueryResult<SearchQuery, SearchQueryVariables>;
