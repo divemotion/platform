@@ -10,6 +10,9 @@ module.exports = withImages(
         ADMIN_SECRET: process.env.ADMIN_SECRET,
         GQL_URL: process.env.GQL_URL,
       },
+      compiler: {
+        styledComponents: true,
+      },
     })
   )
 );
