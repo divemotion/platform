@@ -7,6 +7,7 @@ const styles = {
   bmItemList: tw`bg-white w-full flex flex-col gap-3 pt-4`,
   overlay: tw`bg-transparent cursor-pointer`,
   menu: tw`w-[375px] sm:w-[700px]`,
+  button: tw`overflow-hidden relative`,
 };
 
 const BurgerMenu = (props: Props) => {
@@ -20,6 +21,7 @@ const BurgerMenu = (props: Props) => {
         bmOverlay: styles.overlay as Partial<CSSStyleDeclaration>,
         bmMenu: styles.menu as Partial<CSSStyleDeclaration>,
         bmMenuWrap: styles.menu as Partial<CSSStyleDeclaration>,
+        bmBurgerButton: styles.button as Partial<CSSStyleDeclaration>,
       }}
       onStateChange={(state) => {
         setIsOpen(state.isOpen);
