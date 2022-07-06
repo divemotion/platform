@@ -75,6 +75,7 @@ jobs:
           GRAPHQL_URL: "http://localhost:5001/v1/graphql"
           HASURA_GRAPHQL_SERVER_PORT: 5001
           HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+          HASURA_ADMIN_SECRET: myadminsecretkey
     steps:
       - name: Hasura Health Check
         run: sleep 10 && curl -f http://localhost:5001/healthz
@@ -131,8 +132,10 @@ jobs:
         env:
           GRAPHQL_SCHEMA_URL: "http://localhost:5001/v1/graphql"
           HASURA_ADMIN_SECRET: myadminsecretkey
+      - name: build functions
+        run: yarn workspace functions build
       - name: Hasura Test
-        run: yarn workspace hasura test
+        run: yarn workspace functions start & yarn workspace hasura test
         env:
           POSTGRES_CONNECTION: postgres://postgres:postgrespassword@localhost:5432/postgres
           GRAPHQL_SCHEMA_URL: "http://localhost:5001/v1/graphql"

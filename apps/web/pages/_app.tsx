@@ -11,7 +11,7 @@ function App({ Component, pageProps }: AppProps) {
     },
     uri: process.env.GQL_URL || "",
   });
-  console.log("hi2", process.env.GQL_URL, process.env.ADMIN_SECRET);
+
   return (
     <ApolloProvider client={client}>
       <Component {...pageProps} />

@@ -41,3 +41,20 @@ delete_permissions:
   - role: admin_user
     permission:
       filter: {}
+event_triggers:
+  - name: test
+    definition:
+      enable_manual: false
+      update:
+        columns:
+          - first_name
+    retry_conf:
+      num_retries: 0
+      interval_sec: 10
+      timeout_sec: 60
+    webhook: '{{HASURA_ACTION_BASE_URL}}/api/firstNameToLastName'
+    headers:
+      - name: HASURA_ADMIN_SECRET
+        value_from_env: HASURA_ADMIN_SECRET
+      - name: GRAPHQL_URL
+        value_from_env: GRAPHQL_URL

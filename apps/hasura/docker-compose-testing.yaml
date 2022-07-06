@@ -30,6 +30,9 @@ services:
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       ## uncomment next line to set an admin secret
       HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+      HASURA_ADMIN_SECRET: myadminsecretkey
+      HASURA_ACTION_BASE_URL: http://host.docker.internal:8888
+      GRAPHQL_URL: http://localhost:5001/v1/graphql
       HASURA_GRAPHQL_SERVER_PORT: 5001
 volumes:
   db_data:

@@ -12,3 +12,11 @@ generates:
       - typescript
       - typescript-operations
       - typescript-react-apollo
+  apps/functions/graphql/__generated__/index.ts:
+    documents:
+      - apps/functions/graphql/*.graphql
+    overwrite: true
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request
