@@ -8,3 +8,6 @@ export * from "./Card";
 
 // Bg Image
 export * from "./BgImg";
+
+// Input
+export * from "./Input";
