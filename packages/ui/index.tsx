@@ -6,8 +6,5 @@ export { default as styled } from "styled-components";
 // Card
 export * from "./Card";
 
-// Layout
-export * from "./Layout";
-
 // Bg Image
 export * from "./BgImg";
