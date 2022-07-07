@@ -44,7 +44,7 @@ const SearchPage = () => {
               </div>
             </Button>
           </div>
-          <div className="absolute top-0 left-0 z-0 h-3/4 w-full bg-red-3 bg-[url(https://www.sunrise-divers.com/wp-content/uploads/2017/02/manta-ray-at-koh-bon.jpg)] bg-cover bg-center"></div>
+          <div className="absolute top-0 left-0 z-0 h-3/4 w-full bg-gray-2 bg-[url(https://www.sunrise-divers.com/wp-content/uploads/2017/02/manta-ray-at-koh-bon.jpg)] bg-cover bg-center"></div>
         </div>
         <div className="container mx-auto mt-10 flex-1 overflow-hidden px-4">
           <div id="search-result-header" className="mb-6">
