@@ -21,3 +21,8 @@ Seed File Ordering
 - allotment
 - booking
 - booking_allotment
+
+# To create table seed 
+Run -> `sudo hasura seed create [table-name] --from-table [table-name]`
+
+E.g. sudo hasura seed create schedule --from-table schedule
