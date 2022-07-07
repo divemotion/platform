@@ -1,6 +1,12 @@
 import React from "react";
-import { Button, DatePicker, SearchSelect, TripCard } from "ui";
-import { SvgIcon } from "ui/SvgIcon";
+import {
+  Button,
+  DatePicker,
+  format,
+  SearchSelect,
+  SvgIcon,
+  TripCard,
+} from "ui";
 
 import { MainLayout } from "@/components/Layout";
 
@@ -50,13 +56,33 @@ const SearchPage = () => {
           <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {loading && <div>...Loading</div>}
             {!loading &&
-              data?.trip.map(({ id, name_th, description_th }) => (
-                <TripCard
-                  key={id}
-                  name={name_th}
-                  description={description_th}
-                />
-              ))}
+              data?.trip.map(
+                ({
+                  id,
+                  name_th,
+                  description_th,
+                  boatByBoat: { name_th: boat_name_th },
+                  allotments,
+                  start_date,
+                  end_date,
+                }) => (
+                  <TripCard
+                    key={id}
+                    name={name_th}
+                    description={description_th}
+                    boat={boat_name_th}
+                    price={
+                      allotments.length > 0 &&
+                      allotments.sort((a, b) => a.price - b.price)[0].price
+                    }
+                    available={allotments.length > 0}
+                    date={`${format(new Date(start_date), "dd MMM")} - ${format(
+                      new Date(end_date),
+                      "dd MMM yyyy"
+                    )}`}
+                  />
+                )
+              )}
           </div>
         </div>
       </div>
