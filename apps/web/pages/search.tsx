@@ -1,5 +1,5 @@
 import React from "react";
-import { SearchSelect, TripCard } from "ui";
+import { DatePicker, SearchSelect, TripCard } from "ui";
 
 import { MainLayout } from "@/components/Layout";
 
@@ -18,6 +18,14 @@ const SearchPage = () => {
       <div>
         <div className="p-4">
           <SearchSelect icon="calendar" noOptionsMessage="ไม่พบการค้นหา" />
+          <br />
+          <DatePicker
+            name="test"
+            placeholder="hi"
+            showMonthYearPicker
+            showFullMonthYearPicker
+            popperPlacement="bottom"
+          />
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {loading && <div>...Loading</div>}

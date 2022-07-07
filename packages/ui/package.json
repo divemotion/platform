@@ -12,6 +12,7 @@
     "isomorphic-unfetch": "^3.1.0",
     "react": "^18.1.0",
     "react-burger-menu": "^3.0.8",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.1.0",
     "react-select": "^5.4.0",
     "styled-components": "^5.3.5"
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@types/react": "^18.0.9",
     "@types/react-burger-menu": "^2.8.3",
+    "@types/react-datepicker": "^4.4.2",
     "@types/react-dom": "^18.0.5",
     "@types/styled-components": "^5.1.25",
     "eslint": "^7.32.0",
