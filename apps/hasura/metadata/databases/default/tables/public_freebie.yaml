@@ -5,14 +5,14 @@ array_relationships:
   - name: trip_exclusions
     using:
       foreign_key_constraint_on:
-        column: freebie
+        column: freebie_id
         table:
           schema: public
           name: trip_exclusion
   - name: trip_inclusions
     using:
       foreign_key_constraint_on:
-        column: freebie
+        column: freebie_id
         table:
           schema: public
           name: trip_inclusion

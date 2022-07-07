@@ -4,19 +4,19 @@ table:
 object_relationships:
   - name: boatByBoat
     using:
-      foreign_key_constraint_on: boat
+      foreign_key_constraint_on: boat_id
 array_relationships:
   - name: allotments
     using:
       foreign_key_constraint_on:
-        column: cabin
+        column: cabin_id
         table:
           schema: public
           name: allotment
   - name: cabin_facilities
     using:
       foreign_key_constraint_on:
-        column: cabin
+        column: cabin_id
         table:
           schema: public
           name: cabin_facility

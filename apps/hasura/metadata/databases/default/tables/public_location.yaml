@@ -4,12 +4,12 @@ table:
 object_relationships:
   - name: countryByCountry
     using:
-      foreign_key_constraint_on: country
+      foreign_key_constraint_on: country_id
 array_relationships:
   - name: trip_locations
     using:
       foreign_key_constraint_on:
-        column: location
+        column: location_id
         table:
           schema: public
           name: trip_location

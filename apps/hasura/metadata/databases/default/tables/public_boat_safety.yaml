@@ -4,7 +4,7 @@ table:
 object_relationships:
   - name: boatByBoat
     using:
-      foreign_key_constraint_on: boat
+      foreign_key_constraint_on: boat_id
   - name: safetyBySafety
     using:
-      foreign_key_constraint_on: safety
+      foreign_key_constraint_on: safety_id

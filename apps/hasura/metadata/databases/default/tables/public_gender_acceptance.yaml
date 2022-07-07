@@ -5,7 +5,7 @@ array_relationships:
   - name: allotments
     using:
       foreign_key_constraint_on:
-        column: gender_acceptance
+        column: gender_acceptance_id
         table:
           schema: public
           name: allotment

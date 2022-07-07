@@ -4,10 +4,10 @@ table:
 object_relationships:
   - name: allotmentByAllotment
     using:
-      foreign_key_constraint_on: allotment
+      foreign_key_constraint_on: allotment_id
   - name: bookingByBooking
     using:
-      foreign_key_constraint_on: booking
+      foreign_key_constraint_on: booking_id
   - name: licenseIssuerByLicenseIssuer
     using:
-      foreign_key_constraint_on: license_issuer
+      foreign_key_constraint_on: license_issuer_id

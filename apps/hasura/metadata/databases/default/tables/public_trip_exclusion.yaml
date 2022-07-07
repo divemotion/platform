@@ -4,7 +4,7 @@ table:
 object_relationships:
   - name: freebieByFreebie
     using:
-      foreign_key_constraint_on: freebie
+      foreign_key_constraint_on: freebie_id
   - name: tripByTrip
     using:
-      foreign_key_constraint_on: trip
+      foreign_key_constraint_on: trip_id

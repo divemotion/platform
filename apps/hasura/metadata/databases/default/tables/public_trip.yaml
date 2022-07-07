@@ -4,36 +4,36 @@ table:
 object_relationships:
   - name: boatByBoat
     using:
-      foreign_key_constraint_on: boat
+      foreign_key_constraint_on: boat_id
   - name: organizerByOrganizer
     using:
-      foreign_key_constraint_on: organizer
+      foreign_key_constraint_on: organizer_id
 array_relationships:
   - name: allotments
     using:
       foreign_key_constraint_on:
-        column: trip
+        column: trip_id
         table:
           schema: public
           name: allotment
   - name: trip_exclusions
     using:
       foreign_key_constraint_on:
-        column: trip
+        column: trip_id
         table:
           schema: public
           name: trip_exclusion
   - name: trip_inclusions
     using:
       foreign_key_constraint_on:
-        column: trip
+        column: trip_id
         table:
           schema: public
           name: trip_inclusion
   - name: trip_locations
     using:
       foreign_key_constraint_on:
-        column: trip
+        column: trip_id
         table:
           schema: public
           name: trip_location

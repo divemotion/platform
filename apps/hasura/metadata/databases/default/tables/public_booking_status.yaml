@@ -5,7 +5,7 @@ array_relationships:
   - name: bookings
     using:
       foreign_key_constraint_on:
-        column: booking_status
+        column: booking_status_id
         table:
           schema: public
           name: booking

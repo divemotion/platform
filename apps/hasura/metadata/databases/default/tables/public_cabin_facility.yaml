@@ -4,7 +4,7 @@ table:
 object_relationships:
   - name: cabinByCabin
     using:
-      foreign_key_constraint_on: cabin
+      foreign_key_constraint_on: cabin_id
   - name: facilityByFacility
     using:
-      foreign_key_constraint_on: facility
+      foreign_key_constraint_on: facility_id
