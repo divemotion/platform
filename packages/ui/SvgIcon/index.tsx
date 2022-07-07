@@ -1,7 +1,8 @@
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import React from "react";
 import tw from "twin.macro";
+
+import { BgImg } from "../BgImg";
 
 // import CalendarSvg from "./assets/calendar.svg";
 // const CalendarSvg = require("./assets/calendar.svg");
@@ -14,11 +15,13 @@ export type IconType =
   | "logoText"
   | "burgerMenu"
   | "xClose"
-  | "ChevronDown";
+  | "ChevronDown"
+  | "search";
 
 interface IconProps {
   icon: IconType;
   className?: string;
+  mark?: boolean;
 }
 
 type IconsResourceProps = {
@@ -34,12 +37,13 @@ const icons: IconsResourceProps = {
   burgerMenu: require("./assets/burger-menu.svg"),
   xClose: require("./assets/x-close.svg"),
   ChevronDown: require("./assets/chevron-down.svg"),
+  search: require("./assets/search.svg"),
 };
 
-export const SvgIcon = ({ icon, className = "w-3.5 h-3.5" }: IconProps) => {
-  return (
-    <div className={className} css={[tw`relative`]}>
-      <Image src={icons[icon]} alt="React Logo" layout="fill" />
-    </div>
-  );
+export const SvgIcon = ({
+  icon,
+  className = "w-3.5 h-3.5",
+  mark,
+}: IconProps) => {
+  return <BgImg src={icons[icon]} mark={mark} className={className} />;
 };

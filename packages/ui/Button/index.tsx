@@ -14,6 +14,7 @@ interface ButtonStyleProps {
   variant?: "outline" | "solid";
   disabled?: boolean;
   border?: "rounded" | "default";
+  fullWidth?: boolean;
 }
 
 interface ButtonProps extends ButtonStyleProps {
@@ -21,9 +22,11 @@ interface ButtonProps extends ButtonStyleProps {
 }
 
 const ButtonWrapper = styled.button<ButtonStyleProps>(
-  ({ color, variant, border, size, disabled }) => [
+  ({ color, variant, border, size, disabled, fullWidth }) => [
     // default style
     tw`text-white hover:shadow-md cursor-pointer`,
+    // fullWidth options
+    fullWidth && tw`w-full`,
     // default style
     color === "default" &&
       disabled === false &&
@@ -80,6 +83,7 @@ export const Button = ({
   variant = "solid",
   border = "default",
   disabled = false,
+  fullWidth = false,
 }: ButtonProps) => (
   <ButtonWrapper
     size={size}
@@ -87,6 +91,7 @@ export const Button = ({
     variant={variant}
     border={border}
     disabled={disabled}
+    fullWidth={fullWidth}
   >
     {children}
   </ButtonWrapper>

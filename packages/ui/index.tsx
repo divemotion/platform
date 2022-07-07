@@ -11,3 +11,12 @@ export * from "./BgImg";
 
 // Input
 export * from "./Input";
+
+// Badge
+export * from "./Badge";
+
+// SvgIcon
+export * from "./SvgIcon";
+
+// date fns
+export * from "date-fns";
