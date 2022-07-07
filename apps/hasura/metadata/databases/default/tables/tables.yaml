@@ -16,6 +16,7 @@
 - "!include public_location.yaml"
 - "!include public_organizer.yaml"
 - "!include public_safety.yaml"
+- "!include public_schedule.yaml"
 - "!include public_trip.yaml"
 - "!include public_trip_exclusion.yaml"
 - "!include public_trip_inclusion.yaml"
