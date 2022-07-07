@@ -16,6 +16,13 @@ array_relationships:
         table:
           schema: public
           name: allotment
+  - name: schedules
+    using:
+      foreign_key_constraint_on:
+        column: trip_id
+        table:
+          schema: public
+          name: schedule
   - name: trip_exclusions
     using:
       foreign_key_constraint_on:

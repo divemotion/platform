@@ -1,3 +1,7 @@
 table:
   schema: public
   name: schedule
+object_relationships:
+  - name: trip
+    using:
+      foreign_key_constraint_on: trip_id
