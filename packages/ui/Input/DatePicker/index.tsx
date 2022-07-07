@@ -7,12 +7,11 @@ import ReactDatePicker, { registerLocale } from "react-datepicker";
 import styled from "styled-components";
 import tw from "twin.macro";
 
-import { SvgIcon } from "../../SvgIcon";
+import { IconType, SvgIcon } from "../../SvgIcon";
 
 registerLocale("th", th);
-
 const InputComponent = styled.input(() => [
-  tw`flex h-[42px] items-center rounded-lg border border-gray-4 outline-none  w-full placeholder-gray-5 text-body4 px-[14px]`,
+  tw`flex h-[42px] items-center rounded-lg border bg-transparent border-gray-4 outline-none  w-full placeholder-gray-5 text-body4 px-[14px]`,
 ]);
 
 const Wrapper = styled.div`
@@ -29,7 +28,7 @@ export interface InputProps {
   className?: string;
   showTimeSelect?: boolean;
   placeholder?: string;
-  icon?: string;
+  icon?: IconType;
   withPortal?: boolean;
   selectsRange?: boolean;
   value?: Date | null;
@@ -69,6 +68,14 @@ export const DatePicker = ({
 }: InputProps) => {
   return (
     <Wrapper className="relative w-full">
+      {icon && (
+        <div className="absolute left-0 top-0 flex h-full items-center gap-2">
+          <SvgIcon className="ml-[15px] h-4 w-4" icon={icon} />
+        </div>
+      )}
+      <div className="absolute right-0 top-0 flex h-full items-center gap-2">
+        <SvgIcon className="mr-[15px] h-4 w-4" icon="ChevronDown" />
+      </div>
       <ReactDatePicker
         wrapperClassName="date_picker full-width"
         className="w-40"
@@ -89,6 +96,7 @@ export const DatePicker = ({
         showFullMonthYearPicker={showFullMonthYearPicker}
         customInput={
           <InputComponent
+            css={[icon && tw`pl-[38px]`]}
             name={name}
             type={type}
             placeholder={placeholder}
@@ -97,22 +105,6 @@ export const DatePicker = ({
           />
         }
       />
-      <div className="absolute right-0 top-0 flex h-full items-center gap-2">
-        {/* {enableClear && !!value && (
-          <BgImg
-            src={"/icons/cancel.svg"}
-            className="w-18px bg-meaOrange right-0 top-0 cursor-pointer"
-            mark
-            onClick={() => onClear?.(value)}
-          />
-        )} */}
-        {/* <BgImg
-          src={"/icons/calendar_everyday.svg"}
-          className="w-18px mr-15px bg-gray-70 top-0 cursor-pointer"
-          mark
-        /> */}
-        <SvgIcon className="mr-[15px] h-4 w-4" icon="ChevronDown" />
-      </div>
     </Wrapper>
   );
 };
