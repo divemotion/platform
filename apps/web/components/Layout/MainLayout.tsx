@@ -24,7 +24,7 @@ export const MainLayout = ({ children }: PageProps) => {
         />
       </div>
 
-      <div className="container mx-auto flex-1 overflow-hidden px-[18px] pt-[52px]">
+      <div className="pt-[52px]">
         <div>{children}</div>
       </div>
     </div>
