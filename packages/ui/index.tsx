@@ -23,3 +23,6 @@ export * from "date-fns";
 
 // modal
 export * from "./Modal";
+
+// Gallery
+export * from "./Gallery";
