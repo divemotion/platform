@@ -20,3 +20,9 @@ export * from "./SvgIcon";
 
 // date fns
 export * from "date-fns";
+
+// modal
+export * from "./Modal";
+
+// Gallery
+export * from "./Gallery";

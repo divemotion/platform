@@ -9,7 +9,7 @@ interface PageProps {
 
 export const MainLayout = ({ children }: PageProps) => {
   return (
-    <div className="flex flex-col bg-gray-1">
+    <div className="flex h-screen flex-col bg-gray-1">
       <div className="fixed z-[1] flex  w-full border-b border-gray-3 bg-white text-body4 font-bold  italic text-gray-9 shadow-sm">
         <SideBar />
         <div className="flex-1 py-3.5 px-[18px]">
