@@ -15,6 +15,7 @@ interface ButtonStyleProps {
   disabled?: boolean;
   border?: "rounded" | "default";
   fullWidth?: boolean;
+  className?: string;
 }
 
 interface ButtonProps extends ButtonStyleProps {
@@ -84,8 +85,10 @@ export const Button = ({
   border = "default",
   disabled = false,
   fullWidth = false,
+  className,
 }: ButtonProps) => (
   <ButtonWrapper
+    className={className}
     size={size}
     color={color}
     variant={variant}
