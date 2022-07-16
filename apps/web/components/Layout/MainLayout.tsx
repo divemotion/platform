@@ -9,8 +9,8 @@ interface PageProps {
 
 export const MainLayout = ({ children }: PageProps) => {
   return (
-    <div className="flex h-screen flex-col bg-gray-1">
-      <div className="fixed z-[1] flex  w-full border-b border-gray-3 bg-white text-body4 font-bold  italic text-gray-9 shadow-sm">
+    <div className="relative flex flex-col bg-gray-1">
+      <div className="fixed z-[21] flex  w-full border-b border-gray-3 bg-white text-body4 font-bold  italic text-gray-9 shadow-sm">
         <SideBar />
         <div className="flex-1 py-3.5 px-[18px]">
           <div className="flex items-center justify-center gap-2">
@@ -24,9 +24,7 @@ export const MainLayout = ({ children }: PageProps) => {
         />
       </div>
 
-      <div className="pt-[52px]">
-        <div>{children}</div>
-      </div>
+      <div className="pt-[52px]">{children}</div>
     </div>
   );
 };

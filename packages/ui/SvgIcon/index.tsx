@@ -16,6 +16,7 @@ export type IconType =
   | "burgerMenu"
   | "xClose"
   | "ChevronDown"
+  | "check"
   | "search";
 
 interface IconProps {
@@ -38,6 +39,7 @@ const icons: IconsResourceProps = {
   xClose: require("./assets/x-close.svg"),
   ChevronDown: require("./assets/chevron-down.svg"),
   search: require("./assets/search.svg"),
+  check: require("./assets/check.svg"),
 };
 
 export const SvgIcon = ({

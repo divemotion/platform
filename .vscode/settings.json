@@ -4,6 +4,7 @@
     "camelcase",
     "datepicker",
     "esbuild",
+    "formik",
     "hasura",
     "healthz",
     "tailwindcss"
