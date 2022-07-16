@@ -33,14 +33,14 @@ const SearchPage = () => {
         <div className="bg-gray-1">
           <div
             id="header"
-            className="relative h-[240px] bg-[url(/images/cover.jpg)] bg-cover bg-center pt-[52px] sm:h-[300px] md:h-[350px]"
+            className="relative h-[300px] bg-[url(/images/cover.jpg)] bg-cover bg-center pt-[52px] md:h-[350px]"
           >
-            <div className="container mx-auto max-w-screen-diveScreen px-10 pt-[50px]">
-              <p className="text-header6 font-semibold text-white">
+            <div className="container mx-auto max-w-screen-diveScreen px-10 pt-9 md:pt-[50px]">
+              <p className="text-center text-body1 font-semibold text-white md:text-left md:text-header6">
                 ค้นหาและจองทริปดำน้ำที่ <br />
                 ใช่สำหรับคุณ
               </p>
-              <p className="mt-[18px] text-body2 text-white">
+              <p className="mt-[18px] hidden text-body2 text-white md:block">
                 รับราคาที่ดีที่สุดจากสถาบันดำน้ำที่ได้รับมาตราฐาน <br /> กว่า
                 13,000+ แห่งทั่วโลก
               </p>
@@ -68,7 +68,7 @@ const SearchPage = () => {
                     className="md:w-[180px]"
                     color="primary"
                     size="md"
-                    border="rounded"
+                    // border="rounded"
                   >
                     <div className="flex items-center justify-center gap-2">
                       <SvgIcon
