@@ -17,6 +17,8 @@ export type IconType =
   | "xClose"
   | "ChevronDown"
   | "check"
+  | "phone"
+  | "mail"
   | "search";
 
 interface IconProps {
@@ -40,6 +42,8 @@ const icons: IconsResourceProps = {
   ChevronDown: require("./assets/chevron-down.svg"),
   search: require("./assets/search.svg"),
   check: require("./assets/check.svg"),
+  phone: require("./assets/phone.svg"),
+  mail: require("./assets/mail.svg"),
 };
 
 export const SvgIcon = ({

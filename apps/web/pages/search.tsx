@@ -33,7 +33,7 @@ const SearchPage = () => {
         <div className="bg-gray-1">
           <div
             id="header"
-            className="relative h-[240px] bg-[url(/images/cover.jpg)] bg-cover bg-center sm:h-[300px] md:h-[350px]"
+            className="relative h-[240px] bg-[url(/images/cover.jpg)] bg-cover bg-center pt-[52px] sm:h-[300px] md:h-[350px]"
           >
             <div className="container mx-auto max-w-screen-diveScreen px-10 pt-[50px]">
               <p className="text-header6 font-semibold text-white">

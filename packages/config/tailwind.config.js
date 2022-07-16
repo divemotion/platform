@@ -96,5 +96,8 @@ module.exports = {
       body7: ["12px", "17px"],
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("tailwindcss-debug-screens"),
+  ],
 };
