@@ -6,6 +6,23 @@ module.exports = {
     "./container/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      diveScreen: "1120px",
+    },
+    container: {
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1rem",
+        lg: "1rem",
+        xl: "0rem",
+        "2xl": "0rem",
+      },
+    },
     colors: {
       transparent: "transparent",
       white: "#FFFFFF",
@@ -79,5 +96,8 @@ module.exports = {
       body7: ["12px", "17px"],
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("tailwindcss-debug-screens"),
+  ],
 };

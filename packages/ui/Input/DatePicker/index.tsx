@@ -67,7 +67,7 @@ export const DatePicker = ({
   popperPlacement,
 }: InputProps) => {
   return (
-    <Wrapper className="relative w-full">
+    <Wrapper tw="relative" className={className}>
       {icon && (
         <div className="absolute left-0 top-0 flex h-full items-center gap-2">
           <SvgIcon className="ml-[15px] h-4 w-4" icon={icon} />

@@ -4,8 +4,10 @@
     "camelcase",
     "datepicker",
     "esbuild",
+    "formik",
     "hasura",
     "healthz",
+    "semibold",
     "tailwindcss"
   ],
   "scss.validate": false,
