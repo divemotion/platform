@@ -4,7 +4,7 @@ import { Props, stack as Menu } from "ui/BurgerMenu";
 import { SvgIcon } from "ui/SvgIcon";
 
 const styles = {
-  bmItemList: tw`bg-white w-full flex flex-col gap-3 pt-4`,
+  bmItemList: tw`bg-white flex flex-col gap-3 pt-4`,
   overlay: tw`bg-transparent cursor-pointer`,
   menu: tw`w-[375px] sm:w-[700px]`,
   button: tw`overflow-hidden relative`,

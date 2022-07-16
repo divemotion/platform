@@ -33,11 +33,19 @@ const SearchPage = () => {
         <div className="bg-gray-1">
           <div
             id="header"
-            className="relative h-[240px] bg-[url(https://www.sunrise-divers.com/wp-content/uploads/2017/02/manta-ray-at-koh-bon.jpg)] bg-cover bg-center sm:h-[340px] md:h-[400px]"
+            className="relative h-[240px] bg-[url(/images/cover.jpg)] bg-cover bg-center sm:h-[300px] md:h-[350px]"
           >
-            <p className="mb-7 pt-9 text-center text-body1 font-semibold text-white">
-              ค้นหาและจองทริปดำน้ำที่ใช่สำหรับคุณ
-            </p>
+            <div className="container mx-auto max-w-screen-diveScreen px-10 pt-[50px]">
+              <p className="text-header6 font-semibold text-white">
+                ค้นหาและจองทริปดำน้ำที่ <br />
+                ใช่สำหรับคุณ
+              </p>
+              <p className="mt-[18px] text-body2 text-white">
+                รับราคาที่ดีที่สุดจากสถาบันดำน้ำที่ได้รับมาตราฐาน <br /> กว่า
+                13,000+ แห่งทั่วโลก
+              </p>
+            </div>
+
             <div className="absolute bottom-[-76px] w-full md:bottom-[-37px]">
               <div className="container mx-auto max-w-screen-diveScreen">
                 <div className=" relative z-10 flex flex-col gap-3 rounded-xl bg-white p-4 shadow-md md:flex-row">
