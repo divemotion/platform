@@ -20,6 +20,7 @@ interface ButtonStyleProps {
 
 interface ButtonProps extends ButtonStyleProps {
   children?: JSX.Element | JSX.Element[] | string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 const ButtonWrapper = styled.button<ButtonStyleProps>(
@@ -86,8 +87,10 @@ export const Button = ({
   disabled = false,
   fullWidth = false,
   className,
+  onClick,
 }: ButtonProps) => (
   <ButtonWrapper
+    onClick={onClick}
     className={className}
     size={size}
     color={color}
