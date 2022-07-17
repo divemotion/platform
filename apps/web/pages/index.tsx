@@ -23,7 +23,7 @@ const SearchPage = () => {
 
   if (error) return <div>...error</div>;
   return (
-    <MainLayout>
+    <MainLayout transparent>
       <Formik
         initialValues={{
           price: "",

@@ -5,7 +5,7 @@ import { CTA, TripGallery } from "@/container/TripDetail";
 
 const SearchPage = () => {
   return (
-    <MainLayout>
+    <MainLayout fixed={false}>
       <TripGallery />
       <div className="container mx-auto grid grid-cols-3">
         <div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import tw from "twin.macro";
-import { BgImg, Gallery, Modal } from "ui";
+import { BgImg, Gallery } from "ui";
 
 export const TripGallery = () => {
   const [open, setOpen] = useState(-1);
@@ -14,7 +14,6 @@ export const TripGallery = () => {
   ];
   return (
     <div>
-      {/* <Modal isOpen={true} onClose={() => alert("hi")} /> */}
       <div className="container mx-auto">
         <div className="relative grid grid-flow-col grid-cols-4 grid-rows-2 overflow-hidden sm:mt-4 sm:gap-2 sm:rounded-xl">
           {images.slice(0, 5).map((image, index) => (
