@@ -64,7 +64,7 @@ interface ValueContainerProps {
 const ValueContainer = ({ children, icon }: ValueContainerProps) => {
   return (
     <div className="flex flex-1 items-center gap-1">
-      {icon && <SvgIcon icon={icon} className="h-4 w-4" />}
+      {icon && <SvgIcon icon={icon} mark className="h-4 w-4 bg-gray-6" />}
       <div className="relative box-border grid w-full flex-1 flex-wrap items-center overflow-hidden">
         {children}
       </div>
@@ -126,7 +126,7 @@ export const SearchSelect = ({
         components={{
           IndicatorSeparator: () => null,
           DropdownIndicator: () => (
-            <SvgIcon className="h-4 w-4" icon="ChevronDown" />
+            <SvgIcon className="h-4 w-4 bg-gray-10" mark icon="ChevronDown" />
           ),
           ValueContainer: ({ children }) => (
             <ValueContainer icon={icon}>{children}</ValueContainer>

@@ -54,7 +54,7 @@ export const Filter = () => {
         </div>
       </div>
       <div
-        className="fixed bottom-4 left-0 flex w-full justify-center md:hidden"
+        className="fixed bottom-4 left-0 z-[2] flex w-full justify-center md:hidden"
         onClick={() => setIsFilterOpen(true)}
       >
         <div className="flex items-center gap-1 rounded-full bg-emerald-5 py-2 px-3 text-center">

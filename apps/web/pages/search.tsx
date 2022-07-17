@@ -89,16 +89,38 @@ const SearchPage = () => {
             <div className="grid-cols-3 gap-8 md:grid">
               <Filter />
               <div className="md:col-span-2 lg:grid-cols-2">
-                <div className="mb-4 grid grid-cols-1 gap-4">
-                  {loading && <div>...Loading</div>}
-                  <div id="search-result-header" className="mb-6">
-                    <p className="text-body2 font-semibold text-gray-9">
+                <div
+                  id="search-result-header"
+                  className="mb-6 flex rounded-xl bg-white p-4"
+                >
+                  <div className="flex-1">
+                    <p className="text-body4 font-semibold text-gray-9 sm:text-body2">
                       ทริปดำน้ำ มิถุนายน 2565
                     </p>
                     <p className="text-body5 text-gray-6">
                       ผลการค้นหา 156 ทริป
                     </p>
                   </div>
+                  <SearchSelect
+                    className=""
+                    icon="sort"
+                    noOptionsMessage="ไม่พบการค้นหา"
+                    placeholder="เรียงลำดับ"
+                    options={[
+                      {
+                        label: "มากไปน้อย",
+                        value: 0,
+                      },
+                      {
+                        label: "น้อยไปมาก",
+                        value: 1,
+                      },
+                    ]}
+                  />
+                </div>
+                <div className="mb-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                  {loading && <div>...Loading</div>}
+
                   {!loading &&
                     data?.trip.map(
                       ({
