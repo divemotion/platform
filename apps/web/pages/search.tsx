@@ -48,7 +48,7 @@ const SearchPage = () => {
 
             <div className="absolute bottom-[-76px] w-full md:bottom-[-37px]">
               <div className="container mx-auto max-w-screen-diveScreen">
-                <div className=" relative z-10 flex flex-col gap-3 rounded-xl bg-white p-4 shadow-md md:flex-row">
+                <div className="sticky z-10 flex flex-col gap-3 rounded-xl bg-white p-4 shadow-md md:flex-row">
                   <SearchSelect
                     className="flex-1"
                     icon="calendar"

@@ -19,6 +19,8 @@ export type IconType =
   | "check"
   | "phone"
   | "mail"
+  | "filter"
+  | "sort"
   | "search";
 
 interface IconProps {
@@ -44,6 +46,8 @@ const icons: IconsResourceProps = {
   check: require("./assets/check.svg"),
   phone: require("./assets/phone.svg"),
   mail: require("./assets/mail.svg"),
+  sort: require("./assets/sort.svg"),
+  filter: require("./assets/filter.svg"),
 };
 
 export const SvgIcon = ({
