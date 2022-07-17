@@ -70,12 +70,9 @@ export const MainLayout = ({ children, fixed = true }: PageProps) => {
               />
             </div>
             <div className=" hidden flex-1 gap-4 md:flex lg:gap-6">
-              <NextLink href="/search" passHref>
+              <NextLink href="/" passHref>
                 <a>
-                  <Link
-                    active={router.pathname === "/search"}
-                    isScroll={isScrolled}
-                  >
+                  <Link active={router.pathname === "/"} isScroll={isScrolled}>
                     ค้นหาทริปดำน้ำ
                   </Link>
                 </a>
