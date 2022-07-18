@@ -19,8 +19,16 @@ export type IconType =
   | "check"
   | "phone"
   | "mail"
+  | "share"
   | "filter"
   | "sort"
+  | "equipment"
+  | "correct"
+  | "wrong"
+  | "homeLine"
+  | "shoppingTrolley"
+  | "nitrox"
+  | "heart"
   | "search";
 
 interface IconProps {
@@ -48,6 +56,14 @@ const icons: IconsResourceProps = {
   mail: require("./assets/mail.svg"),
   sort: require("./assets/sort.svg"),
   filter: require("./assets/filter.svg"),
+  share: require("./assets/share.svg"),
+  equipment: require("./assets/equipment.svg"),
+  correct: require("./assets/correct.svg"),
+  wrong: require("./assets/wrong.svg"),
+  homeLine: require("./assets/home-line.svg"),
+  shoppingTrolley: require("./assets/shopping-trolley.svg"),
+  nitrox: require("./assets/nitrox.svg"),
+  heart: require("./assets/heart.svg"),
 };
 
 export const SvgIcon = ({

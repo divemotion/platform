@@ -11,9 +11,14 @@ import { Link } from "./Link";
 interface PageProps {
   children?: React.ReactNode;
   fixed?: boolean;
+  transparent?: boolean;
 }
 
-export const MainLayout = ({ children, fixed = true }: PageProps) => {
+export const MainLayout = ({
+  children,
+  fixed = true,
+  transparent = false,
+}: PageProps) => {
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const handleScroll = () => {
@@ -34,12 +39,13 @@ export const MainLayout = ({ children, fixed = true }: PageProps) => {
     };
   }, []);
   return (
-    <div className="relative flex flex-col bg-gray-1">
+    <div className="relative flex min-h-screen flex-col bg-gray-1">
       <div
         css={[
           fixed && tw`fixed`,
-          isScrolled && tw`bg-white border-b border-gray-3 shadow-sm`,
-          !isScrolled && tw`bg-transparent`,
+          (isScrolled || !transparent) &&
+            tw`bg-white border-b border-gray-3 shadow-sm`,
+          !isScrolled && transparent && tw`bg-transparent`,
           tw`z-[21] flex w-full text-gray-9 transition-colors duration-300`,
         ]}
       >
@@ -52,9 +58,9 @@ export const MainLayout = ({ children, fixed = true }: PageProps) => {
             >
               <SvgIcon
                 css={[
-                  tw`h-5 w-5`,
+                  tw`h-5 w-5 bg-emerald-5`,
                   isScrolled && tw`bg-emerald-5`,
-                  !isScrolled && tw`bg-white`,
+                  !isScrolled && transparent && tw`bg-white`,
                 ]}
                 mark
                 icon="logo"
@@ -63,7 +69,7 @@ export const MainLayout = ({ children, fixed = true }: PageProps) => {
                 css={[
                   tw`h-[23px] w-[91px] bg-emerald-5`,
                   isScrolled && tw`bg-emerald-5`,
-                  !isScrolled && tw`bg-white`,
+                  !isScrolled && transparent && tw`bg-white`,
                 ]}
                 mark
                 icon="logoText"
@@ -72,21 +78,45 @@ export const MainLayout = ({ children, fixed = true }: PageProps) => {
             <div className=" hidden flex-1 gap-4 md:flex lg:gap-6">
               <NextLink href="/" passHref>
                 <a>
-                  <Link active={router.pathname === "/"} isScroll={isScrolled}>
+                  <Link
+                    active={router.pathname === "/"}
+                    isScroll={isScrolled}
+                    transparent={transparent}
+                  >
                     ค้นหาทริปดำน้ำ
                   </Link>
                 </a>
               </NextLink>
-              <Link isScroll={isScrolled}>เกี่ยวกับเรา</Link>
+              <NextLink href="/trip" passHref>
+                <a>
+                  <Link
+                    active={router.pathname === "/trip"}
+                    isScroll={isScrolled}
+                    transparent={transparent}
+                  >
+                    เกี่ยวกับเรา
+                  </Link>
+                </a>
+              </NextLink>
 
-              <Link isScroll={isScrolled}>แจ้งปัญหา/แนะนำ</Link>
+              <Link isScroll={isScrolled} transparent={transparent}>
+                แจ้งปัญหา/แนะนำ
+              </Link>
             </div>
             <div className="hidden gap-4 md:flex lg:gap-6">
-              <Link isScroll={isScrolled} icon="phone">
+              <Link
+                isScroll={isScrolled}
+                icon="phone"
+                transparent={transparent}
+              >
                 08-8987-4693
               </Link>
               <a css={[tw`hidden lg:block`]}>
-                <Link isScroll={isScrolled} icon="mail">
+                <Link
+                  isScroll={isScrolled}
+                  icon="mail"
+                  transparent={transparent}
+                >
                   hello@divemotion.com
                 </Link>
               </a>

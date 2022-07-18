@@ -51,7 +51,7 @@ export const Gallery = (props: Props) => {
         rightKeyPressed={() => console.log("rightKeyPressed")}
       />
       <div
-        className="absolute bottom-4 left-0 z-[2001] flex w-full justify-center"
+        className="fixed bottom-4 left-0 z-[2001] flex w-full justify-center"
         css={[!show && tw`hidden`]}
       >
         <div className="rounded-full bg-white px-4 py-1">
