@@ -39,7 +39,7 @@ export const MainLayout = ({
     };
   }, []);
   return (
-    <div className="relative flex flex-col bg-gray-1">
+    <div className="relative flex min-h-screen flex-col bg-gray-1">
       <div
         css={[
           fixed && tw`fixed`,

@@ -7,6 +7,7 @@
     "formik",
     "hasura",
     "healthz",
+    "nitrox",
     "semibold",
     "tailwindcss"
   ],
