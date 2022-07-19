@@ -7,10 +7,11 @@ import { Pricing } from "./Pricing";
 import { Rooms } from "./Room";
 import { Schedule } from "./Schedule";
 import { TabMenu } from "./TabMenu";
+import { Term } from "./Term";
 
 export const Detail = () => {
   return (
-    <div className="rounded-xl bg-white p-4">
+    <div className="bg-white p-4 md:mb-6 md:rounded-xl md:shadow-sm">
       <div id="trip-menu" className="flex">
         <TabMenu>ข้อมูลทริป</TabMenu>
         <TabMenu>ห้องพัก</TabMenu>
@@ -26,14 +27,21 @@ export const Detail = () => {
       <div className="mt-6">
         <Pricing />
       </div>
-      <div className="mt-6">
+      <hr className="my-6 border-gray-3" />
+      <div>
         <Schedule />
       </div>
-      <div className="mt-6">
+      <hr className="my-6 border-gray-3" />
+      <div>
         <Rooms />
       </div>
-      <div className="mt-6">
+      <hr className="my-6 border-gray-3" />
+      <div>
         <Boat />
+      </div>
+      <hr className="my-6 border-gray-3" />
+      <div>
+        <Term />
       </div>
     </div>
   );

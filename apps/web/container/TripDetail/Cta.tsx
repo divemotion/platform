@@ -3,7 +3,7 @@ import { Button, SvgIcon } from "ui";
 
 export const CTA = () => {
   return (
-    <div className="mb-4 rounded-xl bg-white p-4">
+    <div className="bg-white p-4 shadow-sm md:mb-4 md:rounded-xl">
       <div className="flex-1">
         <p className="text-body4 font-semibold line-clamp-2">
           อันดามันเหนือ-ใต้ เกาะหลีเป๊ะ

@@ -15,10 +15,10 @@ export const RoomCard = ({
   facility,
 }: TripCardProps) => {
   return (
-    <div className="flex overflow-hidden rounded-lg border border-gray-4">
-      <div className="relative h-[225px] flex-1 bg-gray-5">
+    <div className="flex flex-col overflow-hidden rounded-lg border border-gray-4 lg:flex-row">
+      <div className="relative flex-1 bg-gray-5">
         <BgImg
-          className="h-full w-full bg-cover bg-center"
+          className="h-[225px] w-full bg-cover bg-center"
           src="https://picsum.photos/500/500"
         />
       </div>
