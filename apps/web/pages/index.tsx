@@ -35,7 +35,7 @@ const SearchPage = () => {
             id="header"
             className="relative h-[300px] bg-[url(/images/cover.jpg)] bg-cover bg-center pt-[52px] md:h-[350px]"
           >
-            <div className="container mx-auto max-w-screen-diveScreen px-10 pt-9 md:pt-[50px]">
+            <div className="container mx-auto max-w-screen-diveScreen px-4 pt-9 sm:px-10 md:pt-[50px]">
               <p className="text-center text-body1 font-semibold text-white md:text-left md:text-header6">
                 ค้นหาและจองทริปดำน้ำที่ <br />
                 ใช่สำหรับคุณ
@@ -47,7 +47,7 @@ const SearchPage = () => {
             </div>
 
             <div className="absolute bottom-[-76px] w-full md:bottom-[-37px]">
-              <div className="container mx-auto max-w-screen-diveScreen">
+              <div className="container mx-auto max-w-screen-diveScreen px-4 sm:px-0">
                 <div className="sticky z-10 flex flex-col gap-3 rounded-xl bg-white p-4 shadow-md md:flex-row">
                   <SearchSelect
                     className="flex-1"
@@ -85,7 +85,7 @@ const SearchPage = () => {
 
             {/* <div className="absolute top-0 left-0 z-0 h-3/4 w-full bg-gray-2 bg-[url(https://www.sunrise-divers.com/wp-content/uploads/2017/02/manta-ray-at-koh-bon.jpg)] bg-cover bg-center"></div> */}
           </div>
-          <div className="container mx-auto mt-32 max-w-screen-diveScreen flex-1 overflow-hidden md:mt-20">
+          <div className="container mx-auto mt-32 max-w-screen-diveScreen flex-1 overflow-hidden px-4 sm:px-0 md:mt-20">
             <div className="grid-cols-3 gap-8 md:grid">
               <Filter />
               <div className="md:col-span-2 lg:grid-cols-2">

@@ -1,6 +1,10 @@
 import React from "react";
 
+import { Description } from "./Description";
 import { Highlight } from "./Highlight";
+import { Pricing } from "./Pricing";
+import { Rooms } from "./Room";
+import { Schedule } from "./Schedule";
 import { TabMenu } from "./TabMenu";
 
 export const Detail = () => {
@@ -14,6 +18,18 @@ export const Detail = () => {
       </div>
       <div className="mt-6">
         <Highlight />
+      </div>
+      <div className="mt-6">
+        <Description />
+      </div>
+      <div className="mt-6">
+        <Pricing />
+      </div>
+      <div className="mt-6">
+        <Schedule />
+      </div>
+      <div className="mt-6">
+        <Rooms />
       </div>
     </div>
   );

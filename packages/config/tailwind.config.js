@@ -14,15 +14,6 @@ module.exports = {
       "2xl": "1536px",
       diveScreen: "1120px",
     },
-    container: {
-      padding: {
-        DEFAULT: "1rem",
-        sm: "1rem",
-        lg: "1rem",
-        xl: "0rem",
-        "2xl": "0rem",
-      },
-    },
     colors: {
       transparent: "transparent",
       white: "#FFFFFF",

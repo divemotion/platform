@@ -8,7 +8,7 @@ const SearchPage = () => {
     <MainLayout fixed={false}>
       <Header />
       <TripGallery />
-      <div className="container mx-auto mt-6 max-w-screen-diveScreen gap-[14px] md:mt-14 md:grid md:grid-cols-3">
+      <div className="container mx-auto mt-6 max-w-screen-diveScreen gap-[14px] px-4 sm:px-0 md:mt-14 md:grid md:grid-cols-3">
         <div>
           <CTA />
         </div>

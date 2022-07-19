@@ -1,11 +1,6 @@
-import Image from "next/image";
 import React from "react";
-import tw from "twin.macro";
 
 import { BgImg } from "../BgImg";
-
-// import CalendarSvg from "./assets/calendar.svg";
-// const CalendarSvg = require("./assets/calendar.svg");
 
 export type IconType =
   | "calendar"
@@ -29,6 +24,10 @@ export type IconType =
   | "shoppingTrolley"
   | "nitrox"
   | "heart"
+  | "annotationInfo"
+  | "xCircle"
+  | "checkCircle"
+  | "map"
   | "search";
 
 interface IconProps {
@@ -64,6 +63,10 @@ const icons: IconsResourceProps = {
   shoppingTrolley: require("./assets/shopping-trolley.svg"),
   nitrox: require("./assets/nitrox.svg"),
   heart: require("./assets/heart.svg"),
+  annotationInfo: require("./assets/annotation-info.svg"),
+  xCircle: require("./assets/x-circle.svg"),
+  checkCircle: require("./assets/check-circle.svg"),
+  map: require("./assets/map.svg"),
 };
 
 export const SvgIcon = ({
