@@ -27,7 +27,6 @@ export const MainLayout = ({
       setIsScrolled(true);
       return;
     }
-    console.log(position);
     setIsScrolled(false);
   };
 
