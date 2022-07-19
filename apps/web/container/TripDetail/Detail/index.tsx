@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Boat } from "./Boat";
 import { Description } from "./Description";
 import { Highlight } from "./Highlight";
 import { Pricing } from "./Pricing";
@@ -30,6 +31,9 @@ export const Detail = () => {
       </div>
       <div className="mt-6">
         <Rooms />
+      </div>
+      <div className="mt-6">
+        <Boat />
       </div>
     </div>
   );

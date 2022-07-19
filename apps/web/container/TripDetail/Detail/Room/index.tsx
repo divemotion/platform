@@ -1,8 +1,6 @@
 import React from "react";
 import { RoomCard, SvgIcon } from "ui";
 
-import { Day } from "./Day";
-
 export const Rooms = () => {
   return (
     <div>
