@@ -6,7 +6,6 @@ import tw from "twin.macro";
 
 export const Gallery = (props: Props) => {
   const { activePhotoIndex, photos, show } = props;
-  console.log("activePhotoIndex", activePhotoIndex);
   const [index, setIndex] = useState(activePhotoIndex || 0);
   const SIZE = photos.length;
   const onNextPhoto = useCallback(

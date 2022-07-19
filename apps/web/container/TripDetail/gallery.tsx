@@ -13,8 +13,8 @@ export const TripGallery = () => {
     "https://images.unsplash.com/photo-1605387202149-47169c4ea58a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
   ];
   return (
-    <div className="container mx-auto max-w-screen-diveScreen sm:mt-6">
-      <div className="relative grid grid-flow-col grid-cols-4 grid-rows-2 overflow-hidden sm:gap-2 sm:rounded-xl">
+    <div className="container mx-auto max-w-screen-diveScreen md:mt-6 md:px-4 diveScreen:px-0">
+      <div className="relative grid grid-flow-col grid-cols-4 grid-rows-2 overflow-hidden md:gap-2 md:rounded-xl">
         {images.slice(0, 5).map((image, index) => (
           <div
             key={image}

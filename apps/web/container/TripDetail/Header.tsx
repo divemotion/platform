@@ -3,7 +3,7 @@ import { SvgIcon } from "ui";
 
 export const Header = () => {
   return (
-    <div className="container mx-auto mt-8 flex max-w-screen-diveScreen items-center gap-2">
+    <div className="container mx-auto mt-8 flex max-w-screen-diveScreen items-center gap-2 p-4 diveScreen:p-0">
       <div className="flex-1">
         <p className="text-body1 font-semibold line-clamp-2">
           อันดามันเหนือ-ใต้ เกาะหลีเป๊ะ
