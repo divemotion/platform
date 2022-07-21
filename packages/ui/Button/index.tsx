@@ -7,6 +7,7 @@ interface ButtonStyleProps {
   color?:
     | "default"
     | "primary"
+    | "secondary"
     | "information"
     | "warning"
     | "danger"
@@ -26,7 +27,7 @@ interface ButtonProps extends ButtonStyleProps {
 const ButtonWrapper = styled.button<ButtonStyleProps>(
   ({ color, variant, border, size, disabled, fullWidth }) => [
     // default style
-    tw`text-white hover:shadow-md cursor-pointer`,
+    tw`text-white hover:shadow-sm cursor-pointer`,
     // fullWidth options
     fullWidth && tw`w-full`,
     // default style
@@ -46,7 +47,7 @@ const ButtonWrapper = styled.button<ButtonStyleProps>(
       disabled === true &&
       variant === "outline" &&
       tw`border border-gray-5 text-gray-5 cursor-auto`,
-    // color style solid disabled
+    // color primary
 
     color === "primary" &&
       disabled === false &&
@@ -64,6 +65,13 @@ const ButtonWrapper = styled.button<ButtonStyleProps>(
       disabled === true &&
       variant === "outline" &&
       tw`border border-emerald-3 bg-emerald-1 text-emerald-3 cursor-auto`,
+    // color secondary
+    color === "secondary" &&
+      disabled === false &&
+      tw`bg-white border border-gray-4 text-gray-8 hover:text-gray-10`,
+    color === "secondary" &&
+      disabled === true &&
+      tw`bg-white border border-gray-4 text-gray-4`,
     // variant style
 
     // border style

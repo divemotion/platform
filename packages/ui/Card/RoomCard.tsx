@@ -5,7 +5,9 @@ interface TripCardProps {
   name: string;
   description: string;
   price: string;
+  showButton?: boolean;
   facility: string[];
+  customUi?: JSX.Element;
 }
 
 export const RoomCard = ({
@@ -13,6 +15,8 @@ export const RoomCard = ({
   price,
   description,
   facility,
+  showButton = true,
+  customUi,
 }: TripCardProps) => {
   return (
     <div className="flex flex-col overflow-hidden rounded-lg border border-gray-4 lg:flex-row">
@@ -38,15 +42,18 @@ export const RoomCard = ({
             </div>
           ))}
         </div>
+        {customUi}
         <div className="mb-2 flex items-center gap-2">
           <p className="text-body-4 flex-1 font-semibold">ราคา</p>
           <p className="text-body4 font-semibold text-emerald-5">
             ฿ {price} / ต่อคน
           </p>
         </div>
-        <Button color="primary" border="rounded" size="lg">
-          จองเลย
-        </Button>
+        {showButton && (
+          <Button color="primary" border="rounded" size="lg">
+            จองเลย
+          </Button>
+        )}
       </div>
     </div>
   );
