@@ -20,6 +20,10 @@ export type IconType =
   | "equipment"
   | "correct"
   | "wrong"
+  | "circle"
+  | "line"
+  | "minus"
+  | "plus"
   | "homeLine"
   | "shoppingTrolley"
   | "nitrox"
@@ -28,6 +32,11 @@ export type IconType =
   | "xCircle"
   | "checkCircle"
   | "map"
+  | "boat"
+  | "chevronRight"
+  | "chevronLeft"
+  | "userCircle"
+  | "arrowNarrowRight"
   | "search";
 
 interface IconProps {
@@ -67,6 +76,15 @@ const icons: IconsResourceProps = {
   xCircle: require("./assets/x-circle.svg"),
   checkCircle: require("./assets/check-circle.svg"),
   map: require("./assets/map.svg"),
+  circle: require("./assets/circle.svg"),
+  line: require("./assets/line.svg"),
+  minus: require("./assets/minus.svg"),
+  plus: require("./assets/plus.svg"),
+  boat: require("./assets/boat.svg"),
+  arrowNarrowRight: require("./assets/arrow-narrow-right.svg"),
+  userCircle: require("./assets/user-circle.svg"),
+  chevronLeft: require("./assets/chevron-left.svg"),
+  chevronRight: require("./assets/chevron-right.svg"),
 };
 
 export const SvgIcon = ({

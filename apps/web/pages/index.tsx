@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   Button,
@@ -132,22 +133,28 @@ const SearchPage = () => {
                         start_date,
                         end_date,
                       }) => (
-                        <TripCard
-                          key={id}
-                          name={name_th}
-                          description={description_th}
-                          boat={boat_name_th}
-                          price={
-                            allotments.length > 0 &&
-                            allotments.sort((a, b) => a.price - b.price)[0]
-                              .price
-                          }
-                          available={allotments.length > 0}
-                          date={`${format(
-                            new Date(start_date),
-                            "dd MMM"
-                          )} - ${format(new Date(end_date), "dd MMM yyyy")}`}
-                        />
+                        <Link key={id} href="/trip" passHref>
+                          <a>
+                            <TripCard
+                              name={name_th}
+                              description={description_th}
+                              boat={boat_name_th}
+                              price={
+                                allotments.length > 0 &&
+                                allotments.sort((a, b) => a.price - b.price)[0]
+                                  .price
+                              }
+                              available={allotments.length > 0}
+                              date={`${format(
+                                new Date(start_date),
+                                "dd MMM"
+                              )} - ${format(
+                                new Date(end_date),
+                                "dd MMM yyyy"
+                              )}`}
+                            />
+                          </a>
+                        </Link>
                       )
                     )}
                 </div>
