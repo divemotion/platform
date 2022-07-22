@@ -18,7 +18,7 @@ export const TripCard = ({
   date,
 }: TripCardProps) => {
   return (
-    <div className="flex flex-col overflow-hidden rounded-lg border border-gray-4">
+    <div className="flex h-[370px] flex-col overflow-hidden rounded-lg border border-gray-4">
       <div className="relative h-[225px] bg-gray-5">
         <BgImg
           className="h-full w-full bg-cover bg-center"
