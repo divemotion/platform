@@ -30,7 +30,7 @@ export const DetailRoomStep = () => {
             ]}
             showButton={false}
             customUi={
-              <div className="flex">
+              <div className="my-4 flex">
                 <NumberInput />
               </div>
             }
@@ -49,7 +49,7 @@ export const DetailRoomStep = () => {
             ]}
             showButton={false}
             customUi={
-              <div className="flex">
+              <div className="my-4 flex">
                 <NumberInput />
               </div>
             }
@@ -68,7 +68,7 @@ export const DetailRoomStep = () => {
             ]}
             showButton={false}
             customUi={
-              <div className="flex">
+              <div className="my-4 flex">
                 <NumberInput />
               </div>
             }
