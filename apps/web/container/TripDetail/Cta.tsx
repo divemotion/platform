@@ -25,7 +25,7 @@ export const CTA = () => {
   }, []);
 
   return (
-    <div className="sticky top-4 bg-white p-4 shadow-sm md:mb-4 md:rounded-xl">
+    <div className="top-4 bg-white p-4 shadow-sm md:sticky md:mb-4 md:rounded-xl">
       <div className="flex-1">
         <p className="text-body4 font-semibold line-clamp-2">
           อันดามันเหนือ-ใต้ เกาะหลีเป๊ะ

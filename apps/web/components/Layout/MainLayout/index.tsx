@@ -5,6 +5,8 @@ import tw from "twin.macro";
 import { SvgIcon } from "ui/SvgIcon";
 
 import SideBar from "@/components/BurgerMenu";
+import { Footer } from "@/components/Footer";
+import { FullLogo } from "@/components/FullLogo";
 
 import { Link } from "./Link";
 
@@ -45,34 +47,14 @@ export const MainLayout = ({
           (isScrolled || !transparent) &&
             tw`bg-white border-b border-gray-3 shadow-sm`,
           !isScrolled && transparent && tw`bg-transparent`,
-          tw`z-[21] flex w-full text-gray-9 transition-colors duration-300`,
+          tw`z-[21] flex w-full text-gray-9 transition-colors duration-300 items-center`,
         ]}
       >
-        <SideBar isScroll={isScrolled} />
+        <SideBar isScroll={isScrolled} transparent={transparent} />
         <div className="container mx-auto flex max-w-screen-diveScreen">
-          <div className="flex flex-1 justify-center py-3.5 px-[18px]">
-            <div
-              id="logo"
-              className="flex items-center justify-center gap-2 md:mr-10 md:justify-start lg:mr-28"
-            >
-              <SvgIcon
-                css={[
-                  tw`h-5 w-5 bg-emerald-5`,
-                  isScrolled && tw`bg-emerald-5`,
-                  !isScrolled && transparent && tw`bg-white`,
-                ]}
-                mark
-                icon="logo"
-              />
-              <SvgIcon
-                css={[
-                  tw`h-[23px] w-[91px] bg-emerald-5`,
-                  isScrolled && tw`bg-emerald-5`,
-                  !isScrolled && transparent && tw`bg-white`,
-                ]}
-                mark
-                icon="logoText"
-              />
+          <div className="flex flex-1 items-center justify-center py-3.5 px-[18px]">
+            <div className="-my-3 md:mr-10 lg:mr-28">
+              <FullLogo light={!isScrolled && transparent} />
             </div>
             <div className=" hidden flex-1 gap-4 md:flex lg:gap-6">
               <NextLink href="/" passHref>
@@ -127,8 +109,8 @@ export const MainLayout = ({
           icon="burgerMenu"
         />
       </div>
-
       <div>{children}</div>
+      <Footer />
     </div>
   );
 };

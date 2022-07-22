@@ -7,7 +7,7 @@ interface Props {
 
 export const TabMenu = ({ children, className }: Props) => {
   return (
-    <div className="flex-1 border-b border-gray-4 py-2.5 text-center">
+    <div className="box-border flex cursor-pointer justify-center whitespace-nowrap border-b-2 border-white  py-2.5 px-4 text-center hover:border-emerald-5 md:flex-1 md:px-0">
       {children}
     </div>
   );

@@ -5,7 +5,7 @@ export const Filter = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   return (
     <>
-      <div className="hidden self-start rounded-xl border border-gray-2 bg-white p-6 md:block">
+      <div className="mb-4 hidden self-start rounded-xl border border-gray-2 bg-white p-6 md:block">
         <div className="flex items-center">
           <div className="flex-1">
             <p className="text-body2 font-bold text-emerald-5">ตัวกรอง</p>

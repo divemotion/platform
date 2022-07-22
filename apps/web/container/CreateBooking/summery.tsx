@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { BgImg, BoatCard, Button, Modal, SvgIcon } from "ui";
 
@@ -6,7 +7,10 @@ interface Props {
 }
 
 export const SummerySection = ({ step }: Props) => {
+  const router = useRouter();
+  const { query } = router;
   const [isOpen, setIsOpen] = useState(false);
+  const nextStep = Number(query.step || "1") + 1;
   return (
     <>
       {step !== 3 && (
@@ -68,7 +72,7 @@ export const SummerySection = ({ step }: Props) => {
           </p>
         )}
       </div>
-      <div className="fixed bottom-0 left-0 w-full border-t border-gray-4 bg-white p-4 md:relative md:border-none md:bg-transparent md:p-0">
+      <div className="fixed bottom-0 left-0 z-10 w-full border-t border-gray-4 bg-white p-4 md:relative md:border-none md:bg-transparent md:p-0">
         <div
           className="flex items-center md:hidden"
           onClick={() => setIsOpen(true)}
@@ -92,22 +96,67 @@ export const SummerySection = ({ step }: Props) => {
             border="rounded"
             color="secondary"
             size="lg"
+            onClick={() => {
+              router.push({
+                pathname: "/booking/create",
+                query: {
+                  step: step - 1,
+                },
+              });
+            }}
           >
             <p className="text-body4">ย้อนกลับ</p>
           </Button>
-          <div className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-gray-4 md:hidden md:flex-1">
+          <div
+            onClick={() => {
+              router.push({
+                pathname: "/booking/create",
+                query: {
+                  step: step - 1,
+                },
+              });
+            }}
+            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-gray-4 md:hidden md:flex-1"
+          >
             <SvgIcon icon="chevronLeft" mark className="h-5 w-5 bg-gray-10" />
           </div>
-          <Button className="flex-1" border="rounded" color="primary" size="lg">
-            <div className="flex items-center justify-center gap-2">
-              <p className="text-body4">ถัดไป</p>
-              <SvgIcon
-                icon="arrowNarrowRight"
-                mark
-                className="hidden h-5 w-5 bg-white md:block"
-              />
-            </div>
-          </Button>
+          {step !== 3 && (
+            <Button
+              className="flex-1"
+              border="rounded"
+              color="primary"
+              size="lg"
+              onClick={() => {
+                router.push({
+                  pathname: "/booking/create",
+                  query: {
+                    step: step + 1,
+                  },
+                });
+              }}
+            >
+              <div className="flex items-center justify-center gap-2">
+                <p className="text-body4">ถัดไป</p>
+                <SvgIcon
+                  icon="arrowNarrowRight"
+                  mark
+                  className="hidden h-5 w-5 bg-white md:block"
+                />
+              </div>
+            </Button>
+          )}
+          {step === 3 && (
+            <Button
+              className="flex-1"
+              border="rounded"
+              color="primary"
+              size="lg"
+            >
+              <div className="flex items-center justify-center gap-2">
+                <p className="text-body4">จองทริปดำน้ำ</p>
+              </div>
+            </Button>
+          )}
         </div>
       </div>
       <Modal
