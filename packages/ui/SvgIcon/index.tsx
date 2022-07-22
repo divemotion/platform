@@ -7,6 +7,7 @@ export type IconType =
   | "waves"
   | "money"
   | "logo"
+  | "fullLogo"
   | "logoText"
   | "burgerMenu"
   | "xClose"
@@ -37,7 +38,10 @@ export type IconType =
   | "chevronLeft"
   | "userCircle"
   | "arrowNarrowRight"
-  | "search";
+  | "search"
+  | "facebookIcon"
+  | "instagramIcon"
+  | "lineIcon";
 
 interface IconProps {
   icon: IconType;
@@ -85,6 +89,10 @@ const icons: IconsResourceProps = {
   userCircle: require("./assets/user-circle.svg"),
   chevronLeft: require("./assets/chevron-left.svg"),
   chevronRight: require("./assets/chevron-right.svg"),
+  fullLogo: require("./assets/full-logo.svg"),
+  facebookIcon: require("./assets/facebook.svg"),
+  lineIcon: require("./assets/line-icon.svg"),
+  instagramIcon: require("./assets/instagram.svg"),
 };
 
 export const SvgIcon = ({
