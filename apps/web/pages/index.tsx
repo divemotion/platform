@@ -48,7 +48,7 @@ const SearchPage = () => {
             </div>
 
             <div className="absolute bottom-[-76px] w-full md:bottom-[-37px]">
-              <div className="container mx-auto max-w-screen-diveScreen px-4 sm:px-0">
+              <div className="container mx-auto max-w-screen-diveScreen px-4">
                 <div className="sticky z-10 flex flex-col gap-3 rounded-xl bg-white p-4 shadow-md md:flex-row">
                   <SearchSelect
                     className="flex-1"
@@ -87,7 +87,7 @@ const SearchPage = () => {
             {/* <div className="absolute top-0 left-0 z-0 h-3/4 w-full bg-gray-2 bg-[url(https://www.sunrise-divers.com/wp-content/uploads/2017/02/manta-ray-at-koh-bon.jpg)] bg-cover bg-center"></div> */}
           </div>
           <div className="container mx-auto mt-32 max-w-screen-diveScreen flex-1 overflow-hidden px-4 sm:px-0 md:mt-20">
-            <div className="grid-cols-3 gap-8 md:grid">
+            <div className="grid-cols-3 gap-8 px-4 md:grid">
               <Filter />
               <div className="md:col-span-2 lg:grid-cols-2">
                 <div
@@ -119,7 +119,7 @@ const SearchPage = () => {
                     ]}
                   />
                 </div>
-                <div className="mb-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                <div className="mb-4 grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
                   {loading && <div>...Loading</div>}
 
                   {!loading &&
