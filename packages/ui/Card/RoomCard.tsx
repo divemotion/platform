@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, BgImg, Button, SvgIcon } from "ui";
+import { BgImg, Button, SvgIcon } from "ui";
 
 interface TripCardProps {
   name: string;
