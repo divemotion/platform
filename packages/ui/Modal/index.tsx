@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Children, Fragment, useState } from "react";
+import { Fragment } from "react";
 
 import { SvgIcon } from "../SvgIcon";
 
@@ -30,7 +30,7 @@ export const Modal = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="bg-black fixed inset-0 bg-opacity-25" />
+          <div className="bg-black fixed inset-0 bg-gray-10 bg-opacity-25" />
         </Transition.Child>
 
         <div className="fixed inset-0">
@@ -38,11 +38,11 @@ export const Modal = ({
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
+              enterFrom="mt-[100%] scale-95"
+              enterTo="mt-[0%] scale-100"
               leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
+              leaveFrom="mt-[0%] scale-100"
+              leaveTo="mt-[100%] scale-95"
             >
               <Dialog.Panel className="mx-auto flex h-screen max-h-screen w-full transform text-left align-middle transition-all md:max-w-md md:p-4">
                 <div className="flex w-full flex-col overflow-hidden bg-white shadow-xl md:rounded-2xl">

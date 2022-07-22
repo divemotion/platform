@@ -16,9 +16,9 @@ const SearchPage = () => {
   return (
     <MainLayout fixed={false}>
       <div className="bg-white md:bg-transparent">
-        {step === 1 && <RoomStep />}
-        {step === 2 && <InfoStep />}
-        {step === 3 && <ConfirmStep />}
+        {step === 1 && <RoomStep step={step} />}
+        {step === 2 && <InfoStep step={step} />}
+        {step === 3 && <ConfirmStep step={step} />}
       </div>
     </MainLayout>
   );
