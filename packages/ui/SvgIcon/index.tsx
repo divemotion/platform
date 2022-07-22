@@ -92,7 +92,7 @@ const icons: IconsResourceProps = {
   fullLogo: require("./assets/full-logo.svg"),
   facebookIcon: require("./assets/facebook.svg"),
   lineIcon: require("./assets/line-icon.svg"),
-  instagramIcon: require("./assets/instagram-icon.svg"),
+  instagramIcon: require("./assets/instagram.svg"),
 };
 
 export const SvgIcon = ({
