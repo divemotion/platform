@@ -12,9 +12,11 @@ const styles = {
 
 interface SideBarProps {
   isScroll?: boolean;
+  transparent?: boolean;
 }
 
 const BurgerMenu = (props: Props & SideBarProps) => {
+  console.log("props transparent", props.transparent);
   const [isOpen, setIsOpen] = useState(false);
   return (
     // Pass on our props
@@ -37,7 +39,9 @@ const BurgerMenu = (props: Props & SideBarProps) => {
               <SvgIcon
                 css={[
                   tw`my-3.5 mx-[18px] h-5 w-5`,
-                  props.isScroll ? tw`bg-emerald-5` : tw`bg-white`,
+                  props.isScroll || !props.transparent
+                    ? tw`bg-emerald-5`
+                    : tw`bg-white`,
                 ]}
                 mark
                 icon="xClose"
@@ -46,7 +50,9 @@ const BurgerMenu = (props: Props & SideBarProps) => {
               <SvgIcon
                 css={[
                   tw`my-3.5 mx-[18px] h-5 w-5`,
-                  props.isScroll ? tw`bg-emerald-5` : tw`bg-white`,
+                  props.isScroll || !props.transparent
+                    ? tw`bg-emerald-5`
+                    : tw`bg-white`,
                 ]}
                 mark
                 icon="burgerMenu"

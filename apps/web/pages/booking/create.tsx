@@ -10,7 +10,7 @@ const SearchPage = () => {
   const [step, setStep] = useState(1);
 
   useEffect(() => {
-    setStep(Number(queryStep));
+    setStep(Number(queryStep) || 1);
   }, [queryStep]);
 
   return (

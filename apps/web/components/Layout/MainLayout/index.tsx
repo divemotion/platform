@@ -50,7 +50,7 @@ export const MainLayout = ({
           tw`z-[21] flex w-full text-gray-9 transition-colors duration-300 items-center`,
         ]}
       >
-        <SideBar isScroll={isScrolled} />
+        <SideBar isScroll={isScrolled} transparent={transparent} />
         <div className="container mx-auto flex max-w-screen-diveScreen">
           <div className="flex flex-1 items-center justify-center py-3.5 px-[18px]">
             <div className="-my-3 md:mr-10 lg:mr-28">
